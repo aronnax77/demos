@@ -1,0 +1,48 @@
+<!-- an example inspired by w3schools and a first attempt to use w3.css as a
+general tool for page layout.
+
+Author: Richard Myatt
+Date: 17 October 2017
+
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="css/reveal_hide.css">
+  <meta charset="UTF-8">
+  <title>Reveal/Hide with W3CSS and JS</title>
+  <script src="js/reveal_hide.js"></script>
+</head>
+<body>
+  <div class="w3-row w3-center">
+    <div id="left" class="w3-col m2"><p></p></div>
+    <div id="middle" class="w3-col s12 m8 w3-white">
+      <header class="w3-container w3-teal w3-center">
+        <h1 >Reveal/Hide using w3.css and JavaScript</h1>
+      </header>
+      <br>
+      <br>
+      <br>
+      <section class="w3-container w3-left-align">
+        <button class="w3-button w3-blue w3-round" onclick="reveal_hide('panel')">
+          Reveal/Hide</button>
+        <br>
+        <br>
+        <div id="panel" class="w3-container w3-hide w3-yellow w3-padding-16">
+          <p>This is an example of the use of a JavaScript routine to reveal and
+          hide a section within the page using w3.css classes.  The JavaScript
+          code is shown under the JavaScript tab and is a modified version of
+          that found at
+          <a href="https://www.w3schools.com/w3css/tryit.asp?filename=tryw3css_display_show_toggle"
+          target="_blank">w3schools</a>.</p>
+            <p>The css styling for the page is almost entirely from w3.css
+              supplemented by a normal css file to help the layout styling.</p>
+        </div>
+      </section>
+    </div>
+    <div id="right" class="w3-col m2""><p></p></div>
+  </div>
+
+</body>
+</html>

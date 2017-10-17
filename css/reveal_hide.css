@@ -1,0 +1,17 @@
+/* Author: Richard Myatt
+   Date: 17 October 2017
+*/
+
+body {
+  background-color: silver;
+}
+
+#middle {
+  min-height: 100vh;
+  margin-left: 0 auto;
+  /*background-color: silver;*/
+}
+
+#panel {
+  border-radius: 15px;
+}
