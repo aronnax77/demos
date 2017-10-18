@@ -1,0 +1,24 @@
+/* Author: Richard Myatt
+   Date: 18 October 2017
+*/
+
+p {
+  padding: 10px 20px;
+  background-color: #D9ECFF;
+}
+
+div.mydivs {
+  display: none;
+  background-color: #97D6FB;
+  width: 500px;
+}
+
+div.mydivs p {
+  padding: 4px 16px;
+  background-color: #97D6FB;
+}
+
+a {
+  padding-left: 20px;
+  padding-right: 20px;
+}
