@@ -1,0 +1,95 @@
+<!-- Author: Richard Myatt
+     Date: 17 October 2017
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="css/css_menu_icon.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+          rel="stylesheet">
+  <meta charset="UTF-8">
+  <title>CSS Menu Icon</title>
+  <script src="js/css_menu_icon.js"></script>
+</head>
+<body class="w3-display-container w3-light-grey">
+
+  <div class="w3-row">
+    <div id="middle" class="w3-display-topmiddle w3-display-container
+    w3-container w3-panel w3-card-4 w3-col s12 m10 l8 w3-white">
+      <header class="w3-container w3-center">
+        <h1>CSS Menu Icon</h1>
+      </header>
+      <hr>
+      <br>
+      <section class="w3-container w3-right-align w3-large">
+        <a href="#" onclick="reveal_hide('panel')">
+          <i class="material-icons w3-xxlarge w3-text-blue
+          w3-right-align w3-padding-large">info</i></a>
+        <br>
+        <br>
+        <div id="panel" class="w3-container w3-round-large w3-hide w3-left-align w3-sand w3-padding-16">
+          <p>This is a demo showing how css can be used to produce a menu icon which
+            can, if desired, be animated.  Both a static and animated icon are
+            shown.  These icons are taken from information presented on
+          <a href="https://www.w3schools.com/howto/howto_css_menu_icon.asp"
+          target="_blank">w3schools</a>.</p>
+          <p>The css styling for the page is almost entirely based on w3.css
+            supplemented by a normal css file to provide styling for the file
+            icons.</p>
+            <p class='w3-right-align w3-small w3-text-blue'>
+              To close this pannel please left click the info icon
+                again.</p>
+        </div>
+      </section>
+
+      <section class="description w3-container w3-panel w3-large">
+
+          <p>The menu icons shown on this page are made visible through the use
+          of div sections with appropriate css styling to show three horizontal
+          bars.</p>
+          <p>The icon on the left is a static icon while that on the right is
+          animated with the help of JavaScript.  Either one can be used as a
+          way to open a file menu or to fire other events.</p>
+          <p>Left click the animated icon to see the effect.</p>
+
+      </section>
+
+      <section class="w3-row w3-container w3-panel w3-card-4 w3-center w3-large
+      w3-padding-16">
+        <div class="w3-col m6 w3-display-container">
+          <div class="static">
+            <div class="bar0"></div>
+            <div class="bar0"></div>
+            <div class="bar0"></div>
+          </div>
+          <p>Static menu icon</p>
+        </div>
+
+        <div class="w3-col m6">
+          <div class="animated" onclick="changer(this)">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+          </div>
+          <p>Animated menu icon</p>
+        </div>
+      </section>
+
+      <section style="height: 200px;"></section>
+
+      <footer class="w3-col m12 w3-panel w3-display-bottommiddle w3-margin-top">
+        <hr>
+        <div class="w3-col s8 m10">
+          <p></p>
+        </div>
+        <div class="w3-col s4 m2 w3-tiny">
+          <p>Author: Richard Myatt</p>
+          <p>Date: 23 October 2017</p>
+        </div>
+      </footer>
+
+    </div>
+  </div>
+</body>
+</html>

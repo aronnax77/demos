@@ -1,0 +1,9 @@
+/* Example taken from a video by Adam Kouri */
+
+div.contentbox {
+  background-color: #fff;
+  height: 800px;
+  margin: 20px;
+  font-size: 28px;
+  border: 1px dashed #ccc;
+}

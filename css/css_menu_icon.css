@@ -1,0 +1,82 @@
+/******************************************************************************
+TABLE OF CONTENTS
+
+AUTHOR            - Richard Myatt
+DATE              - 23 October 2017
+
+
+GENERAL LAYOUR STYLING         - html elements and layout styles
+INFO PANEL                     - styling for info panel
+MENU ICON                      - styling and animation for menu
+INFO ICON AND PANEL            - styling for info icon and panel
+FOOTER                         - styling for footer
+
+
+COLOUR PALETTE
+
+#333                  - background for menu bars
+
+
+Note: https://autoprefixer.github.io was used to add the prefixed additions in
+      the code below.
+******************************************************************************/
+
+
+/******************************************************************************
+  General layout styling begins
+******************************************************************************/
+hr {
+    display: block;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: solid;
+    width: 95%;
+    border-width: 3px;
+}
+
+#middle {
+  min-height: 100vh;
+}
+/* General layout styling ends */
+
+
+/******************************************************************************
+  Info panel styling
+******************************************************************************/
+.description {
+  text-align:justify;
+}
+/* Info panel styling ends */
+
+
+/******************************************************************************
+  Menu icon styling and animation
+******************************************************************************/
+.animated, .static {
+  margin: 0 auto;
+  width: 40px;
+  cursor: pointer;
+}
+
+.bar0, .bar1, .bar2, .bar3 {
+  width: 35px;
+  height: 5px;
+  background-color: #333;
+  margin: 6px 0;
+  transition: 0.4s;
+}
+
+.change .bar1 {
+  -webkit-transform: rotate(-45deg) translate(-9px, 6px) ;
+  transform: rotate(-45deg) translate(-9px, 6px) ;
+}
+
+.change .bar2 {opacity: 0;}
+
+.change .bar3 {
+  -webkit-transform: rotate(45deg) translate(-8px, -8px) ;
+  transform: rotate(45deg) translate(-8px, -8px) ;
+}
+/* Menu icon styling and animation ends */
