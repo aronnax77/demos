@@ -1,0 +1,15 @@
+/* This is an exercise in the MDN JavaScript tutorial and demonstrates how
+JavaScript can be used to manipulate the DOM to provide a responsive web page.
+See - https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Client-side_web_APIs/Manipulating_documents
+This particular example could be used for any sort of list including a TO DO
+list.
+*/
+
+li {
+  margin-bottom: 10px;
+}
+li button {
+  margin-left: 20px;
+  background-color: orange;
+  border-radius: 10px;
+}
