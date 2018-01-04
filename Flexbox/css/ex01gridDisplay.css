@@ -1,0 +1,38 @@
+/*   Author: Richard Myatt
+     Date: 4 January 2018
+
+     This is a first look at flexbox and is based on details available from
+     https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+*/
+
+.container {
+  text-align: center;
+  font-size: 40px;
+  background-color: #88499C;
+  padding: 10px;
+}
+
+.horizontal {
+  display: flex;
+}
+
+.vertical {
+  display: inline-flex;
+  flex-direction: column;
+}
+
+.container > div {
+  height: 60px;
+  width: 300px;
+  margin: 10px;
+  background-color: #E77F24;
+}
+
+h1 {
+  text-align: center;
+  color: #E77F24;
+}
+
+h1, h2 {
+  color: #E77F24;
+}
