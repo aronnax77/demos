@@ -1,0 +1,46 @@
+/* Example with small modifications based on Learn CSS Grid for free
+   at https://scrimba.com/g/gR8PTE.
+
+   This is an illustration of the use of named lines
+*/
+
+.container {
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+  display: grid;
+  grid-template-columns: [main-start] 1fr [content-start] 5fr [content-end main-end];
+  grid-template-rows: [main-start] 40px [content-start] auto [content-end] 40px [main-end];
+  grid-gap: 3px;
+}
+
+.header {
+  /*grid-column: 1 / 3;
+  grid-column: main-start / main-end;*/  /* These alternatives no longer needed */
+  grid-column: main;
+  background-color: #96ceb4;
+}
+
+.menu {
+  background-color: #ff6f69;
+}
+
+.content {
+  /*grid-column: 2 / 3;
+  grid-column: content-start / content-end;*/  /* These alternatives no longer needed */
+  grid-column: content;
+  /*grid-area: content;*/      /* This also works in this case because the content */
+  background-color: #88d8b0;   /* is boxed in by content lines */
+}
+
+.footer {
+  /*grid-column: 1/ 3;
+  grid-column: main-start / main-end;*/  /* These alternatives no longer needed */
+  grid-column: main;
+  background-color: #ffcc5c;
+}

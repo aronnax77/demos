@@ -1,0 +1,31 @@
+/* Example with small modifications based on Learn CSS Grid for free
+   at https://scrimba.com/g/gR8PTE.
+*/
+
+.container {
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+  border: 2px solid black;
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  grid-template-rows: repeat(2, 100px);
+  grid-gap: 5px;
+  justify-content: space-around;  /* also start, end, space-between, space-evenly, space-around*/
+  /*align-content: center;    /* also start, end, space-between, space-evenly, space-around*/
+}
+
+div:nth-child(even) {
+  background-color: yellow;
+  border: 1px solid green;
+}
+
+div:nth-child(odd) {
+  background-color: lightblue;
+  border: 1px solid green;
+}

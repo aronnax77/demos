@@ -1,0 +1,39 @@
+<!-- An exercise in trying to understand how cookies work.  This one is based on
+     details presented in MDN.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+
+  <h1>Cookies - a demo</h1>
+
+  <p>A demo to illustrate the use of cookies and JavaScript.  Please see the
+     JavaScript code where two cookies are set as this document loads.  These
+     should be set to:</p>
+
+     <ul>
+       <li>"name=oeschger"</li>
+       <li>"favorite_food=tripe"</li>
+     </ul>
+
+  <p> Press the button below to see the content of the two cookies in an alert
+      box.</p>
+
+  <p>Please note that this example is based on
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/Document/cookie" target="_blank">
+      <bold>Document.cookie</bold>.
+    </a></p>
+
+  <button onclick="alertCookieValues()">Show cookie value</button>
+
+  <script src="js/cookies02.js"></script>
+
+</body>
+</html>

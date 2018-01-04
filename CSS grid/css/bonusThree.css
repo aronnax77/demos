@@ -1,0 +1,47 @@
+/* Example with small modifications based on Learn CSS Grid for free
+   at https://scrimba.com/g/gR8PTE.
+
+   This is an example of the difference in behaviour between auto-fit
+   and auto-fill.  To see this in action you will need to resize the
+   window.
+*/
+
+.container1, .container2 {
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.container1 {
+  border: 2px solid black;
+  border: 2px solid blue;
+  display: grid;
+  grid-gap: 5px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-auto-rows: 200px;
+
+}
+
+.container2 {
+  border: 2px solid red;
+  display: grid;
+  grid-gap: 5px;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-auto-rows: 200px;
+}
+
+.num1 {
+  background-color: #34ceb4;
+}
+
+.num2 {
+  background-color: #88d8b0;
+}
+
+.num3 {
+  background-color: #ff6f69;
+}
+
+.num4 {
+  background-color: #ffcc5c;
+}

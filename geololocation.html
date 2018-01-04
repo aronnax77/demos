@@ -1,0 +1,39 @@
+<!-- Author: Richard Myatt
+     Date: 25 November 2017
+
+This code was inspired by the desire to try and understand what the geolocation
+api was, its limitations, and how it can be used.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="css/geolocation.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Geolocation</title>
+</head>
+<body>
+
+  <div class="container">
+    <header>
+      <h1>Test for geolocation compatibility</h1>
+    </header>
+
+    <p>This little app will help determine if your device/browser is compatible
+    with  <a href="https://en.wikipedia.org/wiki/W3C_Geolocation_API"
+    target="_blank">W3C's geolocation api</a>.</p><br><br>
+
+    <p class="compatible">Compatible: </p>
+    <p class="lat"></p>
+    <p class="long"></p>
+    <br>
+    <br>
+    <button type="button" onclick="isCompatible()">Check compatibility</button>
+  </div>
+
+  <script src="js/geolocation.js"></script>
+
+</body>
+</html>

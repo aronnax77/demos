@@ -1,0 +1,25 @@
+/* Example with small modifications based on Learn CSS Grid for free
+   at https://scrimba.com/g/gR8PTE.
+*/
+
+.container {
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+  display: grid;
+  /* auto-fit tries to fit the columns in the space available.  min-max
+     specifies the minimum and maximum width of the columns. */
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  grid-template-rows: repeat(2, 100px);
+  grid-gap: 5px;
+}
+
+div:nth-child(even) {
+  background-color: yellow;
+  border: 1px solid red;
+}
+
+div:nth-child(odd) {
+  background-color: lightblue;
+  border: 1px solid red;
+}

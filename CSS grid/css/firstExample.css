@@ -1,0 +1,23 @@
+/* Example with small modifications based on Learn CSS Grid for free
+   at https://scrimba.com/g/gR8PTE.
+*/
+
+.container {
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+  display: grid;
+  grid-template-columns: 100px auto 100px;
+  grid-template-rows: 50px 50px;
+  grid-gap: 3px;
+}
+
+div:nth-child(even) {
+  background-color: yellow;
+  border: 1px solid red;
+}
+
+div:nth-child(odd) {
+  background-color: lightblue;
+  border: 1px solid red;
+}
