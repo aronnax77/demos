@@ -1,24 +1,25 @@
 /*   Author: Richard Myatt
-     Date: 5 January 2018
+     Date: 4 January 2018
 
-     This is a first look at flexbox and is based on details available from
+     This demo illustrates the use of flec-grow and is based on details
+     available from
      https://css-tricks.com/snippets/css/a-guide-to-flexbox/
 */
 
 .container {
+  display: flex;
   text-align: center;
   font-size: 40px;
   background-color: #88499C;
   padding: 10px;
 }
 
-.horizontal {
-  display: flex;
+.item1 {
+  flex-grow: 1;
 }
 
-.vertical {
-  display: inline-flex;
-  flex-direction: column;
+.item2 {
+  flex-grow: 2;
 }
 
 .container > div {

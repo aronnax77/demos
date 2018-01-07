@@ -1,0 +1,60 @@
+<!-- Author: Richard Myatt
+     Date: 4 January 2018
+
+     This demo illustrates the use of flec-grow and is based on details
+     available from
+     https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="css/ex03flexgrow.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Flexbox example #3</title>
+</head>
+<body>
+
+  <h1>Flexbox example #3 - flex-grow</h1>
+
+  <h2>Items with default flex-grow: 0;</h2>
+
+  <div class="container">
+    <div class="item">1</div>
+    <div class="item">2</div>
+    <div class="item">3</div>
+  </div>
+
+  <br><br><br>
+
+
+  <h2>Items marked with flex-grow: 1;</h2>
+
+  <div class="container">
+    <div class="item1">1</div>
+    <div class="item1">2</div>
+    <div class="item1">3</div>
+  </div>
+
+  <br><br><br>
+  <h2>Item marked with flex-grow: 2;</h2>
+
+  <div class="container">
+    <div>1</div>
+    <div class="item2">2</div>
+    <div>3</div>
+  </div>
+
+  <br><br><br>
+  <p>If flex grow is set to 1 each item will be given an equal amount of space.
+     Giving flex-grow a value of 2 will give an equal amount of space to the
+     remaining items.  A value of 0 is the default and need not be specified.</p>
+  <pre>
+  <p>Note:  The examples on this page are based on information
+            from <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" target="_blank">A Complete Guide To Flexbox</a></p>
+  </pre>
+
+</body>
+</html>

@@ -1,0 +1,50 @@
+/*   Author: Richard Myatt
+     Date: 7 January 2018
+
+     This demo illustrates the use of flex-wrap and is based on details
+     available from
+     https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+*/
+
+.container1, .container2 {
+  display: flex;
+  text-align: center;
+  font-size: 40px;
+  background-color: #88499C;
+  padding: 10px;
+}
+
+.container > div {
+  height: 60px;
+  width: 300px;
+  margin: 10px;
+  background-color: #E77F24;
+}
+
+.container1 {
+  flex-wrap: nowrap;  /* This is the default and does not need to be specified */
+}
+
+.container2 {
+  flex-wrap: wrap;
+}
+
+.item1, .item2 {
+  height: 60px;
+  width: 300px;
+  margin: 10px;
+  background-color: #E77F24;
+}
+
+span {
+  background-color: yellow;
+}
+
+h1 {
+  text-align: center;
+  color: #E77F24;
+}
+
+h1, h2 {
+  color: #E77F24;
+}

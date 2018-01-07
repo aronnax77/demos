@@ -1,7 +1,8 @@
 /*   Author: Richard Myatt
-     Date: 5 January 2018
+     Date: 4 January 2018
 
-     This is a first look at flexbox and is based on details available from
+     This demo illustrates the use of flec-direction and is based on details
+     available from
      https://css-tricks.com/snippets/css/a-guide-to-flexbox/
 */
 
@@ -14,11 +15,12 @@
 
 .horizontal {
   display: flex;
-}
+  flex-direction: row-reverse;  /* row | row-reverse | column | column-reverse */
+}                               /* row is the default and need not be specified */
 
 .vertical {
   display: inline-flex;
-  flex-direction: column;
+  flex-direction: column-reverse;  /* row | row-reverse | column | column-reverse */
 }
 
 .container > div {
