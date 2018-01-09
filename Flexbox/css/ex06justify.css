@@ -1,0 +1,69 @@
+/*   Author: Richard Myatt
+     Date: 9 January 2018
+
+     This is a demo of justify-content
+     https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+*/
+
+.container {
+  display: flex;
+  text-align: center;
+  font-size: 40px;
+  background-color: #88499C;
+  padding: 10px;
+}
+
+.item {
+  height: 60px;
+  width: 300px;
+  margin: 10px;
+  background-color: #E77F24;
+
+}
+
+.start {
+  justify-content: flex-start;        /* This is the default and does not need to be specified */
+}
+
+.end {
+  justify-content: flex-end;
+}
+
+.center {
+  justify-content: center;
+}
+
+.space-between {
+  justify-content: space-between;
+}
+
+.space-around {
+  justify-content: space-around;
+}
+
+.space-evenly {
+  justify-content: space-evenly;
+}
+
+h1 {
+  text-align: center;
+  color: #E77F24;
+}
+
+h1, h2 {
+  color: #E77F24;
+}
+
+@media only screen and (max-width:1200px) {
+  /* For mobile phones: */
+  .item {
+    width: 100px;
+  }
+}
+
+@media only screen and (max-width:620px) {
+  /* For mobile phones: */
+  .item {
+    width: 30px;
+  }
+}

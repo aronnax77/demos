@@ -1,0 +1,78 @@
+/*   Author: Richard Myatt
+     Date: 9 January 2018
+
+     This is a demo of align-items
+     https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+*/
+
+.container {
+  display: flex;
+  height: 500px;
+  text-align: center;
+  font-size: 40px;
+  background-color: #88499C;
+  padding: 10px;
+  justify-content: space-evenly;
+  align-items: center;            /* aligned to center here but individual items adjusted below */
+}
+
+.item1, .item2, .item3, .item4, .item5 {
+  width: 300px;
+  margin: 10px;
+  background-color: #E77F24;
+}
+
+.start {
+  align-self: flex-start;         /* align items 1 and 2 to the top (i.e. start) */
+}
+
+.end {
+  align-self: flex-end;          /* align item 5 to the bottom (i.e. end) */
+}
+
+.center {
+  align-items: center;
+}
+
+.item1 {
+  height: 50px;
+}
+
+.item2 {
+  height: 100px;
+}
+
+.item3 {
+  height: 75px;
+}
+
+.item4 {
+  height: 150px;
+}
+
+.item5 {
+  height: 200px;
+}
+
+h1 {
+  text-align: center;
+  color: #E77F24;
+}
+
+h1, h2 {
+  color: #E77F24;
+}
+
+@media only screen and (max-width:1200px) {
+  /* For mobile phones: */
+  .item {
+    width: 100px;
+  }
+}
+
+@media only screen and (max-width:620px) {
+  /* For mobile phones: */
+  .item {
+    width: 30px;
+  }
+}

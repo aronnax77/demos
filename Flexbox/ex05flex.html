@@ -1,0 +1,46 @@
+<!-- Author: Richard Myatt
+     Date: 7 January 2018
+
+     Notes regarding the use of the css flex attribute.  See also
+     https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="css/ex05flex.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Flexbox example #5</title>
+</head>
+<body>
+
+
+
+  <div class="container">
+    <h1>Flexbox #5 - Notes regarding flex</h1>
+
+    <h2>The flex shorthand property</h2>
+
+    <h3>diplay: flex: none | [ <'flex-grow'> <'flex-shrink'>? || <'flex-basis'> ]</h3>
+
+    <p>When flex is not specified for an item this is automatically given the values
+       flex: 0 0 auto where the three parameters are related to the properties
+       flex-grow, flex-shrink, and flex-basis</p>
+    <p>A demo has been provided here for <a href="https://code.sololearn.com/W89oJmx6cLgk/#html" target="_blank">flex-grow</a>
+       .  0 effectively limits the items in the flex container to their original
+       dimensions.</p>
+    <p>flex: can be specified for an item with one, two, or three parameters.
+       These are explained in the article <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/flex" target="_blank">flex</a>
+       on MDN's site.</p>
+    <p>flex-shrink defines the ability for a flex item to shrink if necessary while
+       flex-basis defines the default size of an element before the remaining space
+       is distributed.</p>
+    <p>A demonstration of flex-shrink can be found <a href="https://codepen.io/HugoGiraudel/pen/95aeaf737efab9c2c1c90ea157c091c6" target="_blank">here.</a>
+       and a demo for flex-basis can be seen <a href="https://codepen.io/HugoGiraudel/pen/58ccdf09053da058e85c442cb93b0c6c" target="_blank">here.</a></p>
+
+  </div>
+
+</body>
+</html>

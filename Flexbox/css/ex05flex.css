@@ -1,0 +1,30 @@
+/*   Author: Richard Myatt
+     Date: 8 January 2018
+
+     Notes regarding the use of the css flex attribute.  See also
+     https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+*/
+
+.container {
+  width: 50%;
+  padding: 10px;
+  margin:0 auto;
+}
+
+h1, h2, h3 {
+  color: #E77F24;
+}
+
+@media only screen and (max-width:1200px) {
+  /* For mobile phones: */
+  .container {
+    width: 80%;
+  }
+}
+
+@media only screen and (max-width:620px) {
+  /* For mobile phones: */
+  .container {
+    width: 100%;
+  }
+}
