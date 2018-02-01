@@ -1,0 +1,29 @@
+/* based on a free tutorial at
+https://www.educative.io/collection/5191711974227968/5741031244955648
+*/
+
+/* make parent element a flex container */
+ul {
+  display: flex;  /* or inline-flex */
+  list-style: none;
+}
+
+li {
+  width: 100px;
+  height: 100px;
+  background-color: #8cacea;
+  margin: 8px;
+}
+
+.note {
+  text-align: center;
+  color: white;
+  background-color: #3498DB;
+  border-radius: 5px;
+  padding: 15px;
+}
+
+.intro {
+  background-color: lightyellow;
+  text-align: center;
+}

@@ -1,0 +1,37 @@
+<!-- A vue.js demo from a youtube tutorial by The Net Ninja, see
+     https://www.youtube.com/watch?v=WjfpQlVem-8&list=PL4cUxeGkcC9gQcYgjhBoeQH7wiAyZNrYa&index=13
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="css/punch_bag.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Punch Bag</title>
+</head>
+<body>
+
+  <div id="vue-app">
+    <!-- bag image -->
+      <div id="bag" v-bind:class="{burst: ended}"></div>
+
+    <!-- bag health -->
+    <div id="bag-health">
+      <div v-bind:style="{width: health + '%'}"></div>
+    </div>
+
+    <!-- game controls -->
+    <div id="controls">
+      <button v-on:click="punch" v-show="!ended">Punch</button>
+      <button v-on:click="restart">Restart</button>
+    </div>
+
+  </div>
+
+  <script src="https://unpkg.com/vue@2.0.3/dist/vue.js"></script>
+  <script src="js/punch_bag.js"></script>
+
+</body>
+</html>

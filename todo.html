@@ -1,0 +1,48 @@
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <link rel="stylesheet" href="css/todo.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Todo List</title>
+  </head>
+  <body>
+
+    <h1>Todo list example</h1>
+
+    <div id="todo-list-example">
+      <input type="text"
+      v-model="newTodoText"
+      v-on:keyup.enter="addNewTodo"
+      placeholder="Add a todo"
+      >
+      <ul>
+        <li
+          is="todo-item"
+          v-for="(todo, index) in todos"
+          v-bind:key="todo.id"
+          v-bind:title="todo.title"
+          v-on:remove="todos.splice(index, 1)"
+        ></li>
+      </ul>
+    </div>
+
+    <br><br><br>
+
+    <div class="text-box">
+
+      <p>This is an example of a dynamic todo list which has been taken from a
+        section in the <a href="https://vuejs.org/v2/guide/list.html" target="_blank">Vue.js documentation</a>.  This example can be
+        contrasted with a similar list example in plain JavaScript -
+        <a href="https://code.sololearn.com/Wo35mP2uhVMd/#js" target="_blank">Shopping list</a> here on SL.</p>
+
+        <p><strong>PLEASE ENTER TEXT IN THE INPUT FIELD AND PRESS ENTER.</strong></p>
+    </div>
+
+
+    <script src="https://unpkg.com/vue@2.0.3/dist/vue.js"></script>
+    <script src="js/todo.js"></script>
+
+  </body>
+  </html>

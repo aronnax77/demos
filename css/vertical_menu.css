@@ -1,0 +1,33 @@
+/* This is an example taken from W3Schools with modifications, see
+   https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_vertical_menu
+*/
+
+.vertical-menu {
+    width: 200px;
+    margin-left: 20px;
+}
+
+.menu-title {
+  background-color: #000;
+  color: #fff;
+  display: block;
+  padding: 12px;
+  text-decoration: none;
+}
+
+.menu-item {
+    background-color: #eee;
+    color: black;
+    display: block;
+    padding: 8px;
+    padding-left: 30px;
+    text-decoration: none;
+}
+
+.vertical-menu .menu-item:hover {
+    background-color: #ccc;
+}
+
+.active {
+    color: blue;
+}

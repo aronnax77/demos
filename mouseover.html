@@ -1,0 +1,34 @@
+<!-- Author: Richard Myatt
+     Date: 26 January 2018
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="css/mouseover.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Vue.js Mouse Demo</title>
+</head>
+<body>
+
+  <div id="app">
+
+    <h1>A simple Vue.js Mouse Event Demo</h1>
+
+    <p>This demo shows Vue.js being used to track the mouse on the 'canvas'
+      below</p>
+    <p>Please hover the mouse over the 'canvas' to see the location of the mouse in
+      relation to the upper left hand corner.</p>
+    <p>Please note that this is not a canvas element and the JavaScript code uses
+      a Vue.js instance to track the mouse position.</p>
+
+    <div id="canvas" @mousemove="track"><h3>({{ x }}, {{ y }})</h3></div>
+  </div>
+
+  <script src="https://unpkg.com/vue@2.5.13/dist/vue.js"></script>
+  <script src="js/mouseover.js"></script>
+
+</body>
+</html>

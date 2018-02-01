@@ -1,0 +1,57 @@
+/* Author: Richard Myatt
+   Date: 26 January 2018
+*/
+
+#app {
+  width: 50vw;
+  margin: 0 auto;
+}
+
+h1 {
+  font-size: 1.6vw
+}
+
+#canvas {
+  display: flex;
+  height: 40vw;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border: 3px solid darkgrey;
+  background-color: lightyellow;
+}
+
+.text {
+  width: 600px;
+  margin-bottom: 35px;
+}
+
+@media only screen and (max-width:1200px) {
+  /* For mobile phones: */
+  h1 {
+    font-size: 3.2vw;
+  }
+
+  #app {
+    width: 70vw;
+  }
+
+  #canvas {
+    height: 55vw;
+  }
+}
+
+@media only screen and (max-width:620px) {
+  /* For mobile phones: */
+  h1 {
+    font-size: 5vw;
+  }
+
+  #app {
+    width: 90vw;
+  }
+
+  #canvas {
+    height: 70vw;
+  }
+}

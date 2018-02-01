@@ -1,0 +1,52 @@
+/* This nested grid demo was written with reference to
+     https://www.quackit.com/css/grid/tutorial/create_a_nested_grid.cfm.
+     Modifications have been made to the original code in order to understand
+     more fully how the nested grid works.
+*/
+
+
+.outer-grid-container {
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  color: #fff;
+  font-size: 4vw;
+  display: grid;
+  grid-template-columns: repeat (12, 1fr);
+  grid-template-rows: 1fr 1fr;
+  grid-gap: 8px;
+  grid-template-areas:
+    "f f f f f f s s s s s s"
+    "t t t t t t l l l l l l";
+}
+
+.item1 {
+  grid-area: f;
+}
+
+.item2 {
+  grid-area: s;
+}
+
+.item3 {
+  grid-area: t;
+}
+
+.item1, .item2, .item3, .inner-grid-container {
+  padding: 8px;
+  background-color: #32cd32;
+}
+
+.inner-grid-container {
+  grid-area: l;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 5px;
+}
+
+.inner-grid-container > div {
+  padding: 8px;
+  background-color: #90ee90;
+}
