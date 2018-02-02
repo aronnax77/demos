@@ -1,0 +1,53 @@
+<!-- A demonstration of Parent/Child communication in Vue.js.  In this case the
+     way in which 'props' is used to allow the parent to communicate with the
+     child.
+-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="css/prop_demo.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+
+  <div id="app">
+    <input type="text" ref="parent">
+    <button v-on:click="updateParent">Submit message</button>
+    <child v-bind:message="parentMessage"></child>
+  </div>
+
+  <template id="child">
+    <span>
+      <h2>Parent says: {{ message }}</h2>
+    </span>
+  </template>
+
+  <div class="notes">
+    <h3>Notes:</h3>
+    <p>Parent/Child communication using '$emit' and 'props' can look very similar
+       in appearance on the rendered page.  See <a href="https://code.sololearn.com/WR5M8D2c6ayf/#html" target="_blank"> this example of the
+        use of '$emit'.</a> 'props', demonstrated here, is used to recieve a message from the
+        parent to the child while '$emit' is used to send a message from the child
+        to the parent.</p>
+    <p>In this example the input field and the button are part of the parent.
+    After a message is written into the input field the send message button calls
+    a handler on the parent which sets the 'parentMessage' data field on the parent
+    and finally clears the input field.</p>
+
+    <p>Transmission or sending of the message to the child now relies on a binding
+    between 'message' the 'props' property on the child and the data held by the
+    parent parentMessage'.</p>
+  </div>
+
+
+
+  <script src="https://unpkg.com/vue@2.0.3/dist/vue.js"></script>
+  <script src="js/prop_demo.js"></script>
+
+</body>
+</html>

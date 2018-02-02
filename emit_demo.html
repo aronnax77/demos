@@ -1,0 +1,60 @@
+<!-- This example is based on code presented in
+     https://vuetiful.wordpress.com/2017/03/03/in-depth-child-parent-communication-with-custom-events/
+     and modified and anotated by me to help me understand Parent Child
+     communication in Vue.js
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="css/emit_demo.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>$emit demo</title>
+</head>
+<body>
+
+  <div id="app">
+    <!-- parent listens for the 'send-event' from the child component and calls -->
+    <!-- the parent method 'updateMessage' with the argument sent by the child -->
+    <message-comp @send-event="updateMessage"></message-comp>
+    <!-- 'messageFromParent' corresponds with the data field of the parent -->
+    <h2>Child says: {{ messageFromParent }}</h2>
+  </div>
+
+  <!-- template component reference by Vue in the javascript through its id -->
+  <template id="message-component">
+    <div>
+      <!-- v-model ties this creates a two way binding with the coponents data -->
+      <input v-model="message">
+      <!-- this click event activates the method of the component -->
+      <button @click="sendMessage">Send Message</button>
+    </div>
+  </template>
+
+  <br><br><br>
+
+  <div class="notes">
+    <h3>Notes:</h3>
+    <p>Parent/Child communication using '$emit' and 'props' can look very similar
+       in appearance on the rendered page.  See <a href="https://code.sololearn.com/WaL2th7vekEs/#html" target="_blank"> this example of the
+        use of 'props'.</a> '$emit', demonstrated here, sends a message from the
+        child to the parent while 'props' is used to send a message from the parent
+        to the child.</p>
+    <p>In this example the input field and the button are part of the child component.
+    A message is written into the input field and is then immediately available in the
+    message variable of the child component.  The send message button now allows the
+    child to raise a custom event and is accompanied by an argument containing the
+    child's message.</p>
+    <p>The parent element in this example listens for the custom event - the 'send-event'-
+    and calls a method handler which automatically recieves the argument attached by
+    the child to the custom event.  This event handler then sets the data variable used
+    by the output field.</p>
+  </div>
+
+  <script src="https://unpkg.com/vue@2.0.3/dist/vue.js"></script>
+  <script src="js/emit_demo.js"></script>
+
+</body>
+</html>

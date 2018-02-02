@@ -1,0 +1,10 @@
+/* This example is based on code presented in
+   https://vuetiful.wordpress.com/2017/03/03/in-depth-child-parent-communication-with-custom-events/
+   and modified and anotated by me to help me understand Parent Child
+   communication in Vue.js
+*/
+
+.notes {
+  text-align: justify;
+  width: 500px;
+}

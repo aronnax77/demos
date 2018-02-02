@@ -1,0 +1,9 @@
+/* A demonstration of Parent/Child communication in Vue.js.  In this case the
+   way in which 'props' is used to allow the parent to communicate with the
+   child.
+*/
+
+.notes {
+  text-align: justify;
+  width: 500px;
+}
