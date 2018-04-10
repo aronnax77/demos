@@ -1,0 +1,42 @@
+<!-- template demo with reference to
+     https://developer.mozilla.org/en-US/docs/Web/HTML/Element/template
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="css/template.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Templates</title>
+</head>
+<body>
+
+  <!-- html code for a table setting up the header and the skeleton of the table -->
+  <table id="producttable">
+    <thead>
+      <tr>
+        <td>UPC_Code</td>
+        <td>Product_Name</td>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- existing data could optionally be included here -->
+    </tbody>
+  </table>
+
+
+  <!-- template for the rows which will be dynamically added through javascript -->
+  <template id="productrow">
+    <tr>
+      <td class="record"></td>
+      <td></td>
+    </tr>
+  </template>
+
+
+  <script src="js/template.js"></script>
+
+</body>
+</html>

@@ -15,18 +15,26 @@
 </head>
 <body>
 
+  <!-- the main application code -->
   <div id="app">
+    <!-- input box for the user to set the parents message to the child -->
     <input type="text" ref="parent">
+    <!-- button to call the 'updateParent' handler in the main Vue app -->
     <button v-on:click="updateParent">Submit message</button>
+    <!-- child 'message' attribute in props bound to 'parentMessage' data field -->
+    <!-- in main Vue app.  This results in communication between parent and child -->
     <child v-bind:message="parentMessage"></child>
   </div>
 
+
+  <!-- template code used in the main app as <child></child> -->
   <template id="child">
     <span>
       <h2>Parent says: {{ message }}</h2>
     </span>
   </template>
 
+  <!-- my notes for future reference -->
   <div class="notes">
     <h3>Notes:</h3>
     <p>Parent/Child communication using '$emit' and 'props' can look very similar

@@ -1,0 +1,11 @@
+/* template demo with reference to
+   https://developer.mozilla.org/en-US/docs/Web/HTML/Element/template
+*/
+
+table {
+  border: solid 2px black;
+}
+
+td {
+  border: solid 2px black;
+}

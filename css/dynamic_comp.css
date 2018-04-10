@@ -1,0 +1,38 @@
+/* Author: Richard Myatt
+   21 March 2018
+*/
+
+.comp {
+  border-radius: 10px;
+  border: 2px solid black;
+  width: 500px;
+  height: 250px;
+  background-color: lightblue;
+  padding: 16px;
+  margin: 50px auto;
+}
+
+.btns {
+  display: flex;
+  justify-content: space-between;
+  width: 500px;
+  height: 30px;
+  margin: 20px auto;
+}
+
+.desc {
+  width: 500px;
+  height: 100px;
+  text-align: justify;
+  margin: 20px auto;
+}
+
+button {
+  font-size: 1.2em;
+  background-color: orange;
+}
+
+h1 {
+  text-align: center;
+  color: purple;
+}

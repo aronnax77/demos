@@ -1,0 +1,34 @@
+<!-- Author: Richard Myatt
+     Date: 27 March 2018
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="css/events_bus_demo.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Events Bus Demo</title>
+</head>
+<body>
+
+  <div id="vue-app">
+    <header-app></header-app>
+    <div class="output">
+      <p>This is a demo which shows how an events bus can be used in Vue.js.
+        To see the bus in action simply left click on the title above.  Doing
+        so will alter the header and the footer at the same time using an events
+        bus.  This bus comunicates directly with the second component and avoids
+        the need to direct events through the main vue app.
+        Please see the accompanying code for details.</p>
+    </div>
+    <footer-app></footer-app>
+  </div>
+
+
+  <script src="https://unpkg.com/vue@2.0.3/dist/vue.js"></script>
+  <script src="js/events_bus_demo.js"></script>
+
+</body>
+</html>

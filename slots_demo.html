@@ -1,0 +1,38 @@
+<!-- Author: Richard Myatt
+     20 March 2018
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="css/slots_demo.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Vue.js slots demo</title>
+</head>
+<body>
+
+  <div id="app">
+
+    <slots-demo :text="text">
+      <h1 slot="title">A Vue.js slots demo</h1>
+      <h4 slot="supplement">Some supplementary text in the suplement slot</h4>
+    </slots-demo>
+
+  </div>
+
+  <template id="slots-demo">
+    <div>
+      <slot name="title"></slot>
+      <p>{{ text }}</p>
+      <slot name="supplement"></slot>
+    </div>
+  </template>
+
+
+  <script src="https://unpkg.com/vue@2.0.3/dist/vue.js"></script>
+  <script src="js/slots_demo.js"></script>
+
+</body>
+</html>

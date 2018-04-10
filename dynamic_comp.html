@@ -1,0 +1,51 @@
+<!-- Author: Richard Myatt
+     21 March 2018
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="css/dynamic_comp.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Vue.js dynamic components</title>
+</head>
+<body>
+
+  <div id="app">
+
+    <div class="comp">
+      <component :is="comp"></component>
+    </div>
+
+    <div class="btns">
+    <button @click="comp = 'comp-one'">Component One</button>
+    <button @click="comp = 'comp-two'">Component Two</button>
+    </div>
+
+  </div>
+
+  <div class="desc">
+    <p>While this demo is not very exciting it illustrates how two different html components can be used within the same page at the same location in the main file.</p>
+  </div>
+
+  <template id="comp-one">
+    <div>
+      <h1>Component One</h1>
+
+    </div>
+  </template>
+
+  <template id="comp-two">
+    <div>
+      <h1>Component Two</h1>
+    </div>
+  </template>
+
+
+  <script src="https://unpkg.com/vue@2.0.3/dist/vue.js"></script>
+  <script src="js/dynamic_comp.js"></script>
+
+</body>
+</html>
