@@ -1,0 +1,56 @@
+<!-- Author: Richard Myatt
+     Date: 10 March 2018
+
+     This demo shows a classic modal with a background mask.
+
+-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="css/classic_modal.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Classic Modal</title>
+</head>
+<body>
+
+  <!-- Demo title -->
+  <div class="title">
+    <h1>Classic Modal</h1>
+  </div>
+
+  <!-- provide a button to trigger the modal -->
+  <button id="btn">Open Modal</button>
+
+  <!-- The Modal -->
+  <div id="classicModal">   <!-- this outer div provides the background mask -->
+
+    <div class="modal-content">  <!-- this is the pop-up window -->
+
+      <!-- Modal title (optianal) and close button -->
+      <div class="modal-title">
+        <h2>Modal Title</h2>
+        <span class="close">&times</span>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        <p>Place some text in the Modal here ...</p>
+      </div>
+
+      <!-- Modal footer (optional) -->
+      <div class="modal-footer">
+        <h3>Modal Footer</h3>
+      </div>
+
+    </div>
+
+  </div>
+
+  <script src="js/classic_modal.js"></script>
+
+</body>
+</html>
