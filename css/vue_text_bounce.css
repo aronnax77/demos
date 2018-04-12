@@ -1,0 +1,65 @@
+/* Author: Richard Myatt
+   Date: 11 April 2018
+
+   A simple Vue.js animation which uses keyframes.
+*/
+
+
+/* general styling of demo starts */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #ddd;
+}
+
+/* Demo title */
+.title {
+  text-align: center;
+  color: lightgreen;
+  background-color: #333;
+  padding: 16px;
+  margin-bottom: 50px;
+}
+
+/* position and size the app */
+#app {
+  width: 300px;
+  margin: auto;
+}
+
+/* paragraph styling */
+p {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+/* button styling */
+button {
+  background-color: orange;
+  border-radius: 10px;
+  font-size: 1em;
+  padding: 0.5em;
+  margin-top: 30px;
+}
+/* general styling ends */
+
+
+/* transition styling starts */
+.bounce-enter-active{
+  animation: bounce-in 1s;
+}
+.bounce-leave-active {
+  animation: bounce-in 1s reverse;
+}
+
+@keyframes bounce-in {
+     0% {
+       transform: scale(0);
+     }
+     50% {
+       transform: scale(1.2);
+     }
+     100% {
+       transform: scale(1);
+     }
+   }
+/* transition styling ends */

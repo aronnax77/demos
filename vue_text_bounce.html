@@ -1,0 +1,42 @@
+<!-- Author: Richard Myatt
+     Date: 11 April 2018
+
+     A simple Vue.js animation which uses keyframes.
+-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="css/vue_text_bounce.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Vue.js Animation Demo</title>
+</head>
+<body>
+
+  <!-- give our demo a nice title -->
+  <div class="title">
+    <h1>Simple Vue.js Animation Demo</h1>
+  </div>
+
+    <!-- our vue.js app -->
+    <div id="app">
+
+      <!-- a button to initiate the transition -->
+      <button @click="show=!show">Toggle</button><br>
+
+      <!-- wrap the elements in transition tags -->
+      <transition name="bounce">
+        <p v-if="show">hi guys, what's up!</p>
+      </transition>
+
+    </div>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>
+  <script src="js/vue_text_bounce.js"></script>
+
+</body>
+</html>

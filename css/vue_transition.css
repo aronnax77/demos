@@ -1,0 +1,66 @@
+/* Author: Richard Myatt
+   Date: 11 April 2018
+
+   A simple Vue.js transitions demo.
+*/
+
+
+/* general styling of demo starts */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #ddd;
+}
+
+/* Demo title */
+.title {
+  text-align: center;
+  color: lightgreen;
+  background-color: #333;
+  padding: 16px;
+  margin-bottom: 50px;
+}
+
+/* style the explanation div */
+.explanation {
+  background-color: lightyellow;
+  text-align: justify;
+  font-size: 1.5em;
+  width: 50vw;
+  min-height: 25vw;
+  padding: 20px;
+  margin: auto;
+  border: 2px solid #888;
+}
+
+/* button styling */
+button {
+  background-color: orange;
+  border-radius: 10px;
+  font-size: 1em;
+  padding: 0.5em;
+  margin-top: 30px;
+}
+/* general styling ends */
+
+
+/* transition styling starts */
+/* style h2 element */
+h2 {
+  text-align: center;
+}
+
+/* these two classes provide the transition data */
+.demo-enter-active, .demo-leave-active {
+  transition: opacity 3s;
+}
+
+/* classes providing the start and end states */
+.demo-enter, .demo-leave-to {
+  opacity: 0;
+}
+
+/* classes providing intermediate state - optional in this case */
+.demo-enter-to, .demo-leave {
+  opacity: 1;
+}
+/* transition styling ends */

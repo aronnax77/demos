@@ -1,0 +1,55 @@
+<!-- Author: Richard Myatt
+     Date: 11 April 2018
+
+     A simple Vue.js transitions demo.
+-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="css/vue_transition.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Simple Vue.js Transitions Demo</title>
+</head>
+<body>
+
+  <!-- give our demo a nice title -->
+  <div class="title">
+    <h1>Simple Vue.js Transition Demo</h1>
+  </div>
+
+  <!-- short explanation -->
+  <div class="explanation">
+    <p>Vue.js 'transitions' allow transitions to be added to a Vue application
+    using the Vue.js framework.  This is accomplished by wrapping the element to
+    be animated in a transition tag.  Transition classes, of which there are six,
+    provided by Vue.js are then used to control the way in which the animation
+    works.  For a very clear explanation of this see
+    <a href="https://alligator.io/vuejs/understanding-transitions/" target="_blank">
+    'Understanding Vue.js Transitions'.</a></p>
+
+
+    <!-- our vue.js app -->
+    <div id="app">
+
+      <!-- a button to initiate the transition -->
+      <button @click="show=!show">Toggle</button>
+
+      <!-- wrap the elements in transition tags -->
+      <transition name="demo">
+        <h2 v-show="show">SOLOLEARN</h2>
+      </transition>
+
+    </div>
+
+  </div>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>
+  <script src="js/vue_transition.js"></script>
+
+</body>
+</html>
