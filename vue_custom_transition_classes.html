@@ -1,0 +1,49 @@
+<!-- Author: Richard Myatt
+     Date: 16 April 2018
+
+     A Vue.js custom transition classes demo based on https://vuejs.org/v2/guide/transitions.html
+     and modified for this demo.  Custom transition classes can be used as an
+     interface with an external library such as Animate.css as used in this example.
+-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link href="https://cdn.jsdelivr.net/npm/animate.css@3.5.1" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="css/vue_custom_transition_classes.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Vue.js Custom Transition Classes</title>
+</head>
+<body>
+
+  <!-- give our demo a nice title -->
+  <div class="title">
+    <h1>Vue.js Custom Transition Classes</h1>
+  </div>
+
+  <!-- vue application -->
+  <div id="vue-demo">
+
+    <!-- provide a button to trigger the modal -->
+    <button id="btn" @click="show = !show">Toggle</button>
+
+    <!-- Vue transition animation using custom classes linked to the Animate.css library -->
+    <transition name="custom-classes-animation"
+                enter-active-class="animated rubberBand"
+                leave-active-class ="animated bounceOutRight">
+
+      <p v-if="show">SOLOLEARN</p>
+
+    </transition>
+
+  </div>
+
+
+   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+   <script src="js/vue_custom_transition_classes.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,56 @@
+/* Author: Richard Myatt
+   Date: 16 April 2018
+
+   A Vue.js custom transition classes demo based on https://vuejs.org/v2/guide/transitions.html
+   and modified for this demo.  Custom transition classes can be used as an
+   interface with an external library such as Animate.css as used in this example.
+*/
+
+
+/* general styling of demo starts */
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #ddd;
+}
+
+/* Demo title */
+.title {
+  text-align: center;
+  color: lightgreen;
+  background-color: #333;
+  padding: 16px;
+  margin-bottom: 50px;
+}
+
+/* position and size the app */
+#vue-demo {
+  width: 300px;
+  margin: 0 auto;
+}
+
+/* paragraph styling */
+p {
+  font-size: 30px;
+  font-weight: bold;
+  margin-top: 30px;
+}
+
+/* button styling */
+button {
+  background-color: orange;
+  border-radius: 10px;
+  font-size: 1em;
+  padding: 0.5em;
+  margin-top: 30px;
+}
+
+button:hover {
+  cursor: pointer;
+}

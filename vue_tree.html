@@ -1,0 +1,67 @@
+<!-- Author: Richard Myatt
+     Date: 16 March 2018
+
+     A Vue.js tree menu using recursive components with reference to
+     https://vuejsdevelopers.com/2017/10/23/vue-js-tree-menu-recursive-components/
+     modified and extended for this demo.
+-->
+
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <link rel="stylesheet" href="css/vue_tree.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue.js Tree Menu</title>
+  </head>
+  <body>
+
+    <!-- give our demo a nice title -->
+    <div class="title">
+      <div class="title-container">
+      <h1>Vue.js Tree Menu </h1>
+      <h3>(Using recursive components)</h3>
+      </div>
+    </div>
+
+    <!-- container for tree menu -->
+    <div class="container">
+      <!-- vue application -->
+      <div id="tree">
+
+        <tree-menu :label="tree.label"
+                   :nodes="tree.nodes"
+                   :depth="0"
+                   ></tree-menu>
+
+      </div>
+    </div>
+
+
+    <!-- tree menu template -->
+    <template id="tree-menu">
+      <div class="tree-menu">
+
+        <div :style="indent" @click="handleEvent" :class="{ folders: nodes, items: !nodes }">
+          <span v-if="nodes&&!showChildren">&#9654;</span>
+          <span v-else-if="nodes&&showChildren">&#9660;</span>
+          {{ label }}
+        </div>
+
+        <tree-menu
+            v-if="showChildren"
+            v-for="node in nodes"
+            :nodes="node.nodes"
+            :label="node.label"
+            :depth="depth+1"
+            ></tree-menu>
+
+      </div>
+    </template>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>
+    <script src="js/vue_tree.js"></script>
+
+  </body>
+  </html>

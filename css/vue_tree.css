@@ -1,0 +1,53 @@
+/* Author: Richard Myatt
+   Date: 16 March 2018
+
+   A Vue.js tree menu using recursive components with reference to
+   https://vuejsdevelopers.com/2017/10/23/vue-js-tree-menu-recursive-components/
+   modified and extended for this demo.
+*/
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Demo title */
+.title {
+  text-align: center;
+  color: lightgreen;
+  background-color: #333;
+  padding: 16px;
+  margin-bottom: 50px;
+}
+
+/* style main container */
+.container {
+  width: 300px;
+  margin: 0 auto;
+}
+
+/* style menu folders */
+.folders {
+  font-size: 1.2em;
+  color: blue;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding-bottom: 5px;
+}
+
+/* style menu items */
+.items {
+  padding-bottom: 5px;
+}
+
+.folders:hover, .items:hover {
+  cursor: pointer;
+}
+
+/* styling for animated triangle */
+div span {
+  font-size: 0.6em;
+  vertical-align: 20%;
+}
