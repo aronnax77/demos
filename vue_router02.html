@@ -1,0 +1,129 @@
+<!-- Author: Richard Myatt
+     Date: 18 April 2018
+
+     A second vue-router demo exploring further features of vue-router including
+     dynamic route matching and nested child routes.  Please note that although
+     this code functions within the code playground the routing itself is not
+     displayed in the top bar of the browser.  To see this properly the code will
+     need to be run on a machine independently of the playground.
+
+     PLEASE NOTE THAT THE ROUTING ITSELF IS NOT VISIBLE IN THE URL IN
+     THE CODE PLAYGROUND BUT WILL SHOW ITSELF IF RUN ON A PC.
+-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="css/vue_router02.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Vue-router demo 02</title>
+</head>
+<body>
+
+  <!-- provide a nice title for out demo -->
+  <div class="title">
+    <h1>vue-router demo 02</h1>
+  </div>
+
+
+  <!-- Vue application -->
+  <div id="vue-app">
+
+    <nav>
+      <ul>
+        <li>
+          <router-link to="/">Home (/)</router-link>
+        </li>
+        <li>
+          <router-link to="/about">About (/about)</router-link>
+        </li>
+        <li>
+          <router-link to="/user/Bob">User (/user/Bob)</router-link>
+        </li>
+        <li>
+          <router-link to="/user/Bob/profile">/user/Bob/profile</router-link>
+        </li>
+        <li>
+          <router-link to="/user/Bob/posts">/user/Bob/posts</router-link>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- route content will be added here -->
+    <router-view></router-view>
+
+  </div>
+
+
+  <!-- template for the home page -->
+  <template id="home">
+    <div class="home-container">
+      <h2>Home Page</h2>
+      {{ homeContent }}</div>
+  </template>
+
+
+  <!-- template for the about page -->
+  <template id="about">
+    <div class="about-container">
+      <h2>About</h2>
+      <p>Author: Richard Myatt</p>
+      <p>Date: 17 April 2018</p>
+      <p>Exploring vue-router</p>
+    </div>
+  </template>
+
+
+  <!-- template for the user page -->
+  <template id="user">
+    <div class="user-container">
+      <div class="user-default-container">
+        <h2>User {{ $route.params.name }}</h2>
+        Hello {{ $route.params.name }} this is your profile page.
+      </div>
+      <br><br>
+      <div class="child-container">
+
+        <!-- child elements will be added here -->
+        <router-view></router-view>
+      </div>
+    </div>
+  </template>
+
+
+  <!-- template for the default content of the child element on the user page -->
+  <template id="default-child">
+    <div class="child-container">
+      <h4>Default child details</h4>
+      <p>{{ msg }}</p>
+  </template>
+
+
+  <!-- template for the profile content of the child element on the user page -->
+  <template id="profile-child">
+    <div class="child-container">
+      <h4>User Profile</h4>
+      <p>{{ msg }}</p>
+  </template>
+
+
+  <!-- template for the posts content of the child element on the user page -->
+  <template id="posts-child">
+    <div class="child-container">
+      <h4>User Posts</h4>
+      <p>{{ msg }}</p>
+  </template>
+
+
+  <!-- add Vue.js and vue-router.js -->
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>
+  <script src="https://unpkg.com/vue-router/dist/vue-router.min.js"></script>
+
+  <!-- custom application script -->
+  <script src="js/vue_router02.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,87 @@
+/* Author: Richard Myatt
+   Date: 18 April 2018
+
+   A second vue-router demo exploring further features of vue-router including
+   dynamic route matching and nested child routes.  Please note that although
+   this code functions within the code playground the routing itself is not
+   displayed in the top bar of the browser.  To see this properly the code will
+   need to be run on a machine independently of the playground.
+
+   PLEASE NOTE THAT THE ROUTING ITSELF IS NOT VISIBLE IN THE URL IN
+   THE CODE PLAYGROUND BUT WILL SHOW ITSELF IF RUN ON A PC.
+*/
+
+/* general styling */
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  background-color: #ddd;
+}
+
+/* Demo title */
+.title {
+  text-align: center;
+  color: lightgreen;
+  background-color: #333;
+  padding: 16px;
+  margin-bottom: 50px;
+}
+
+/* nav styling */
+nav {
+  width: 30vw;
+  margin: 20px auto;
+}
+
+ul li {
+  padding: 5px 20px;
+  list-style-type: none;
+  text-decoration: none;
+  width: 200px;
+  background-color: lightblue;
+  border: 1px solid #000;
+}
+
+ul li:hover {
+  cursor: pointer;
+}
+
+/* style containers */
+.home-container, .about-container, .user-container {
+  text-align: justify;
+  width: 30vw;
+  background-color: lightyellow;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 0 auto;
+}
+
+.home-container h2, .about-container h2, .user-container {
+  text-align: center;
+  padding: 16px;
+}
+
+.child-container {
+  color: red;
+}
+
+
+/* responsive design styling */
+@media only screen and (max-width:1200px) {
+  /* For mobile phones: */
+  nav, .home-container, .about-container, .user-container {
+    width: 60vw;
+  }
+}
+
+@media only screen and (max-width:620px) {
+  /* For mobile phones: */
+  nav, .home-container, .about-container, .user-container {
+    width: 90vw;
+  }
+}
