@@ -1,0 +1,39 @@
+<!-- Author: Richard Myatt
+     Date: 24 May 2018
+
+     A Vue.js checkbox demo
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Using checkboxes in Vue.js</title>
+</head>
+<body>
+
+  <div id='app'>
+    <checkbox-comp></checkbox-comp>
+  </div>
+
+  <template id="box">
+    <div>
+      <input type="checkbox" id="red" value="Red" v-model="color" @change="procData($event.target.value)">
+      <label for="red">Red</label>
+      <input type="checkbox" id="green" value="Green" v-model="color">
+      <label for="green">Green</label>
+      <input type="checkbox" id="blue" value="Blue" v-model="color">
+      <label for="blue">Blue</label>
+      <br><br><br>
+      <span>Checked colors: {{ color }}</span>
+
+    </div>
+  </template>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="js/checkbox.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!-- Author: Richard Myatt
+     Date: 24 May 2018
+
+     A Vue.js radio button demo
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Vue.js radio buttons demo</title>
+</head>
+<body>
+
+  <div id="app">
+    <radio-group :picked="picked"></radio-group>
+  </div>
+
+  <template id="radio">
+    <div class="radio">
+      <input type="radio" id="cat" value="Cat" v-model="picked">
+      <label for="cat">Cat</label>
+      <br>
+      <input type="radio" id="dog" value="Dog" v-model="picked">
+      <label for="dog">Dog</label>
+      <br><br><br>
+      <span>Picked: {{ picked }}</span>
+    </div>
+  </template>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>
+  <script src="js/radio.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!--  Author: Richard Myatt
+      Date: 24 May 2018
+
+      highlight.js demo
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/dracula.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>highlight.js Demo 01</title>
+</head>
+<body>
+
+  <pre>
+    <code class="lang-python">
+
+def bubbleSort(l):
+    """
+    An implementation of the bubble sore with optimisation
+    """
+    result = l[:]
+
+    lengthData = len(result)
+    sweep      = lengthData - 1
+
+    while sweep >= 0:
+        for i in range(sweep):
+            if result[i] > result[i+1]:
+                result[i], result[i+1] = result[i+1], result[i]
+        sweep -= 1
+
+    return result
+
+
+print(bubbleSort([33, 20, 12, 31, 2, 67]))
+
+    </code>
+  </pre>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad()</script>
+
+</body>
+</html>
