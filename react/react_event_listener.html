@@ -1,0 +1,42 @@
+<!--  A demo showing an onclick (onClick) event listener used in react
+
+      Author: Richard Myatt
+      Date: 4 June 2018
+-->
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>React event listener</title>
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+  </head>
+  <body>
+
+    <div id="root"></div>
+
+
+    <script type="text/babel">
+
+      function onclickHandler() {
+        alert("This alert was fired by clicking the button rendered by React");
+      }
+
+      const myContent = (
+        <div>
+          <button onClick={onclickHandler}>Please click</button>
+        </div>
+      )
+
+      ReactDOM.render(
+        myContent,
+        document.getElementById('root')
+      );
+
+    </script>
+
+  </body>
+</html>

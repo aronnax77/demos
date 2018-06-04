@@ -1,0 +1,63 @@
+<!--  Another small step with react which makes use of a starter
+      script provided on the main site.
+
+      Author: Richard Myatt
+      Date: 3 June 2018
+-->
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>A Second Look at React!</title>
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+    <style>
+
+      body {
+        background-color: lightgrey;
+      }
+
+      #container {
+        text-align: center;
+        width: 400px;
+        height: 250px;
+        margin: 100px auto;
+        padding: 16px;
+        background-color: lightblue;
+        border: 2px solid black;
+        border-radius: 20px;
+      }
+
+      h1 {
+        color:  darkblue;
+      }
+    </style>
+  </head>
+  <body>
+
+    <div id="root"></div>
+
+
+    <script type="text/babel">
+
+      const myContent = (
+        <div id="container">
+          <h1>React</h1>
+          <h3>A Second Small Step</h3>
+          <p>Adding a little content.</p>
+          <p>And a little styling.</p>
+        </div>
+      )
+
+      ReactDOM.render(
+        myContent,
+        document.getElementById('root')
+      );
+
+    </script>
+
+  </body>
+</html>

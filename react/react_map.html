@@ -1,0 +1,47 @@
+<!--  Rendering a list of items using react including a key to each item.
+      The key is required in certain circumstances and prevents reordering of
+      the list and allows it to be updated.
+
+      Author: Richard Myatt
+      Date: 4 June 2018
+-->
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Generating a list using react</title>
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+  </head>
+  <body>
+
+    <h1>Rendering a list with React</h1>
+    <br><br>
+
+    <div id="root"></div>
+
+
+    <script type="text/babel">
+
+    const myList = ["Red", "Green", "Blue"];
+
+    const listItems = myList.map((item, i) => <li key={"item_" + i}>{item}</li>);
+
+      const myContent = (
+        <div>
+          <ul>{listItems}</ul>
+        </div>
+      )
+
+      ReactDOM.render(
+        myContent,
+        document.getElementById('root')
+      );
+
+    </script>
+
+  </body>
+</html>
