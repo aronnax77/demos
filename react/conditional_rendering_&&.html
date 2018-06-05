@@ -1,0 +1,71 @@
+<!--  Conditional rendering using react JSX.  This demo uses the logical && statement.
+      If the first part of the statement is true the last condition is returned.
+
+      Author: Richard Myatt
+      Date: 5 June 2018
+-->
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>React Conditional Rendering (&&)</title>
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+    <style>
+    .green {
+      display: inline-block;
+      background-color: lightgreen;
+    }
+    .red {
+      display: inline-block;
+      background-color: pink;
+    }
+    div {
+      width: 450px;
+    }
+    </style>
+  </head>
+  <body>
+
+    <!-- Preliminaries -->
+    <h1>React</h1> <h3>Conditional Rendering using &&</h3>
+    <h3>Note:</h3>
+    <div>
+      <ol>
+        <li>The logical && construct can be used as a conditional expression in
+        JSX elements because if the first part of the statement is true the end
+        of the statement is returned</li>
+        <li>This demo uses a random generator.  If you want to see both results you
+        will need to refresh the browser.</li>
+      </ol>
+    </div>
+
+
+    <!-- The react app -->
+    <div id="root"></div>
+
+
+    <script type="text/babel">
+
+    let choice = Math.random() < 0.5 ? "Heads" : "Tails";
+
+    // Using logical &&
+    const result = (
+      <ul>
+        {choice === "Heads" && <li className="green">The PC randomly chose Heads</li>}
+        {choice === "Tails" && <li className="red">The PC randomly chose Tails</li>}
+      </ul>
+    );
+
+    ReactDOM.render(
+    result,
+    document.getElementById('root')
+    );
+
+    </script>
+
+  </body>
+</html>

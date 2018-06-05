@@ -1,0 +1,80 @@
+<!--  Conditional rendering using react JSX.  This demo uses the if/else statement.
+      if/else cannot be used inside JSX elements and must therefore be used outside
+      them.
+
+      Author: Richard Myatt
+      Date: 5 June 2018
+-->
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>React Conditional Rendering (if)</title>
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+    <style>
+    .green {
+      display: inline-block;
+      background-color: lightgreen;
+    }
+    .red {
+      display: inline-block;
+      background-color: pink;
+    }
+    div {
+      width: 450px;
+    }
+    </style>
+  </head>
+  <body>
+
+    <!-- Preliminaries -->
+    <h1>React</h1> <h3>Conditional Rendering using if/else</h3>
+    <h3>Note:</h3>
+    <div>
+      <ol>
+        <li>if else statements cannot be used within JSX elements and must therefore
+        be used outside them.  This demo illustrates the use of if else.</li>
+        <li>This demo uses a random generator.  If you want to see both results you
+        will need to refresh the browser.</li>
+      </ol>
+    </div>
+
+
+    <!-- The react app -->
+    <div id="root"></div>
+
+
+
+    <script type="text/babel">
+
+    let choice = Math.random() < 0.5 ? "Heads" : "Tails";
+
+    let result;
+
+    if (choice === "Heads") {
+      result = (
+        <h4 className="green">
+          The PC randomly chose Heads
+        </h4>
+      );
+    } else {
+      result = (
+        <h4 className="red">
+          The PC randomly chose Tails
+        </h4>
+      );
+    }
+
+    ReactDOM.render(
+    result,
+    document.getElementById('root')
+    );
+
+    </script>
+
+  </body>
+</html>
