@@ -1,0 +1,77 @@
+<!--  A component which illustrates a little more complexity
+
+      Author: Richard Myatt
+      Date: 6 June 2018
+-->
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Another basic React Component</title>
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+    <style>
+    body {
+      background-color: #000;
+    }
+    .container {
+      position: relative;
+      color: #fff;
+      width: 450px;
+      margin: 50px auto;
+    }
+    img {
+      position: relative;
+      left: 125px;
+      width: 200px;
+      border-radius: 20px;
+      margin-bottom: 20px;
+    }
+    cite a{
+      color: yellow;
+      font-size: 0.6em;
+      float: right;
+    }
+    </style>
+  </head>
+  <body>
+
+    <div id="root"></div>
+
+
+    <script type="text/babel">
+
+      var quote = {
+        text: "I have always wished for my computer to be as easy to use as my telephone; my wish has come true because I can no longer figure out how to use my telephone.",
+        attribution: "Bjarne Stroustrup",
+        link: "https://en.wikipedia.org/wiki/Bjarne_Stroustrup",
+        image: "https://upload.wikimedia.org/wikipedia/commons/0/0e/Bjarne-stroustrup_%28cropped%29.jpg"
+      };
+
+      class Quote extends React.Component {
+        render() {
+          return (
+            <div className="container">
+            <img src={quote.image} alt={quote.attribution} />
+            <blockquote>
+              {quote.text}
+            </blockquote>
+            <cite>
+              <a target="_blank" href={quote.link}>{quote.attribution}</a>
+            </cite>
+            </div>
+          );
+        }
+      }
+
+      ReactDOM.render(<Quote />,
+        document.getElementById('root')
+      );
+
+    </script>
+
+  </body>
+</html>
