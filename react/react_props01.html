@@ -1,0 +1,73 @@
+<!--  A first look at react props
+
+      Author: Richard Myatt
+      Date: 7 June 2018
+-->
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="css/react_props01.css">
+    <meta charset="UTF-8" />
+    <title>React Props Demo 01</title>
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+  </head>
+  <body>
+
+    <div id="root"></div>
+
+
+    <script type="text/babel">
+
+    //prompt("Please enter your name.");
+
+      class Title extends React.Component {
+        render() {
+          return (
+            <div className="title">
+              <h1>{this.props.text}</h1>
+            </div>
+          );
+        }
+      }
+
+      class Content extends React.Component {
+        render() {
+          return (
+            <div className="content-container">
+            <h4>Hello {this.props.userName} Welcome to Props Demo 01</h4>
+            <p>This React demo is intended to illustrate a simple use of component composition and props.</p>
+            <p>A Main component is composed of two other components, Title, and Content.  The Title component has a built in prop named text which provides the text of the title at the top of the page.  The Content component uses a dynamically generated prop to include the name of the user.</p>
+            </div>
+          );
+        }
+      }
+
+      class MainApp extends React.Component {
+        get name() {
+          let userName = prompt("Please enter your name.");
+          return userName;
+        }
+        render() {
+          return (
+            <div>
+            <Title text="Props Demo 01" />
+            <Content userName={this.name} />
+            </div>
+
+          );
+        }
+      }
+
+      ReactDOM.render(
+        <MainApp />,
+        document.getElementById('root')
+      );
+
+    </script>
+
+  </body>
+</html>
