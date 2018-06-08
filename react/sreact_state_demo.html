@@ -1,0 +1,83 @@
+<!--  A simple state demo which reuses a Title component from 'React Props Demo'.
+      See https://code.sololearn.com/Wdbi1T6L5g6p/#html
+
+      Author: Richard Myatt
+      Date: 8 June 2018
+-->
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="css/react_state_demo.css">
+    <meta charset="UTF-8" />
+    <title>React state demo</title>
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+  </head>
+  <body>
+
+    <div id="root"></div>
+
+
+    <script type="text/babel">
+
+      const green = '#39D1B4';
+      const yellow = '#FFD712';
+
+      // reuse our Title component
+      class Title extends React.Component {
+        render() {
+          return (
+            <div className="title">
+              <div className="title-container">
+                <h1>{this.props.text}</h1>
+                <h5>{this.props.subtext}</h5>
+              </div>
+            </div>
+          );
+        }
+      }
+
+      class Toggle extends React.Component {
+
+      // declare a constructor
+      constructor(props) {
+        super(props);
+        this.state = {color: green};        // initial state
+        this.changeColor = this.changeColor.bind(this);  // bind this
+      }
+
+      // class method to change colour
+      changeColor() {
+        const newColor = this.state.color == green ? yellow : green;
+        this.setState({color: newColor});
+      }
+
+      // render method for our component
+      render() {
+        return (
+          <div>
+            // reuse our Title component
+            <Title text="React State Demo" subtext="Reusing Title component" />
+            <div className="container" style={{background: this.state.color}}>
+              <h2>
+                Change my color
+              </h2>
+              <button onClick={this.changeColor}>
+                Change color
+              </button>
+            </div>
+          </div>
+        );
+      }
+      }
+
+      ReactDOM.render(<Toggle />,
+      document.getElementById('root'));
+
+    </script>
+
+  </body>
+</html>

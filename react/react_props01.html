@@ -28,7 +28,10 @@
         render() {
           return (
             <div className="title">
-              <h1>{this.props.text}</h1>
+              <div className="title-container">
+                <h1>{this.props.text}</h1>
+                <h5>{this.props.subtext}</h5>
+              </div>
             </div>
           );
         }
@@ -40,7 +43,7 @@
             <div className="content-container">
             <h4>Hello {this.props.userName} Welcome to Props Demo 01</h4>
             <p>This React demo is intended to illustrate a simple use of component composition and props.</p>
-            <p>A Main component is composed of two other components, Title, and Content.  The Title component has a built in prop named text which provides the text of the title at the top of the page.  The Content component uses a dynamically generated prop to include the name of the user.</p>
+            <p>A Main component is composed of two other components, Title, and Content.  The Title component has two built in props named 'text' and 'subtext' which provides the text of the title and the subtitle at the top of the page.  The Content component uses a dynamically generated prop to include the name of the user.</p>
             </div>
           );
         }
@@ -54,7 +57,7 @@
         render() {
           return (
             <div>
-            <Title text="Props Demo 01" />
+            <Title text="Props Demo 01" subtext="Including Component Composition"/>
             <Content userName={this.name} />
             </div>
 
