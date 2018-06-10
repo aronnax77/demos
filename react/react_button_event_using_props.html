@@ -1,0 +1,73 @@
+<!--  Using an onClick event which references props.
+
+      Author: Richard Myatt
+      Date: 10 June 2018
+-->
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="css/react_button_event_using_props.css">
+    <meta charset="UTF-8" />
+    <title>Child button event using props</title>
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+  </head>
+  <body>
+
+    <div id="root"></div>
+
+
+    <script type="text/babel">
+
+    class Title extends React.Component {
+        render() {
+          return (
+            <div className="title">
+              <div className="title-container">
+                <h1>{this.props.text}</h1>
+                <h5>{this.props.subtext}</h5>
+              </div>
+            </div>
+          );
+        }
+      }
+
+      class Button extends React.Component {
+        render() {
+          return (
+            <div className="button-container">
+              <button onClick={this.props.onclick}>{ this.props.text }</button>
+            </div>
+          );
+        }
+      }
+
+      class MainApp extends React.Component {
+        showAlert() {
+          alert("This alert was fired by a child component through an onClick event which referenced the childs props attribute 'onclick',  Please see accompanying code.");
+        }
+
+        render() {
+          return (
+            <div>
+              <Title text="React props demo 02"
+                     subtext="Child click event fired using props" />
+              <Button onclick={this.showAlert} text="Click Me"/>
+            </div>
+          );
+        }
+      }
+
+
+      ReactDOM.render(
+        <MainApp />,
+        document.getElementById('root')
+      );
+
+    </script>
+
+  </body>
+</html>
