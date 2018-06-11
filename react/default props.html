@@ -1,0 +1,73 @@
+<!--  This demo illustrates how default props can be used when a prop is not
+      directly specified in the render function.
+
+      Author: Richard Myatt
+      Date: 10 June 2018
+-->
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="css/default_props.css">
+    <meta charset="UTF-8" />
+    <title>React default props</title>
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+  </head>
+  <body>
+
+    <div id="root"></div>
+
+
+    <script type="text/babel">
+
+    class Title extends React.Component {
+        render() {
+          return (
+            <div className="title">
+              <div className="title-container">
+                <h1>{this.props.text}</h1>
+                <h5>{this.props.subtext}</h5>
+              </div>
+            </div>
+          );
+        }
+      }
+
+      Title.defaultProps = {text: "Title/Logo",
+                            subtext: "Default props!"};
+
+      class MainApp extends React.Component {
+        constructor(props) {
+          super(props);
+          this.state = {titleText: "React props demo 03"}
+        }
+
+        render() {
+          return (
+            <div>
+              <Title text={this.state.titleText} />
+
+              <div className="content-container">
+              <h4>Notes</h4>
+                <p>The main title in the title bar above is provided by the MainApps state property titleText.  The smaller text is not provided by the MainApp but renders because a defaultProp is provided for the subtext prop of the child component.</p>
+                <p>This can be overridden by inserting a prop value for the subtext prop within the instance of Title.  <strong>Try inserting subtext="text_of_your_choice"</strong>.</p>
+                <p>Please see the accompanying code.</p>
+              </div>
+
+            </div>
+          );
+        }
+      }
+
+      ReactDOM.render(
+        <MainApp />,
+        document.getElementById('root')
+      );
+
+    </script>
+
+  </body>
+</html>

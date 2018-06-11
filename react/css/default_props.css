@@ -1,0 +1,49 @@
+/*    This demo illustrates how default props can be used when a prop is not
+      directly specified in the render function.
+
+      Author: Richard Myatt
+      Date: 10 June 2018
+*/
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: lightyellow;
+}
+
+.title {
+  display: flex;
+  justify-content: center;
+  color: lightblue;
+  background-color: #333;
+  padding: 5px;
+}
+
+.title-container {
+  width: 450px;
+  text-align: center;
+}
+
+.content-container {
+  width: 450px;
+  padding: 16px;
+  border: 2px solid black;
+  border-radius: 16px;
+  background-color: lightblue;
+  margin: 50px auto;
+}
+
+.content-container h4 {
+  color: blue;
+  padding: 5px;
+  text-align: center;
+}
+
+.content-container p {
+  padding: 5px;
+  text-align: justify;
+}
