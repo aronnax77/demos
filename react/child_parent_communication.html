@@ -1,0 +1,110 @@
+<!--  A demo which shows how a child component can communicate with the parent
+      component.
+
+      Author: Richard Myatt
+      Date: 12 June 2018
+-->
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="css/child_parent_communication.css">
+    <meta charset="UTF-8" />
+    <title>Child/Parent Communication</title>
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+  </head>
+  <body>
+
+    <div id="root"></div>
+
+
+    <script type="text/babel">
+
+    class Title extends React.Component {
+        render() {
+          return (
+            <div className="title">
+              <div className="title-container">
+                <h1>{this.props.text}</h1>
+                <h5>{this.props.subtext}</h5>
+              </div>
+            </div>
+          );
+        }
+      }
+
+      class Child extends React.Component {
+        constructor(props) {
+          super(props);
+          this.handleChange = this.handleChange.bind(this);
+        }
+
+        handleChange(e) {
+          const newColor = e.target.value;
+          this.props.onChange(newColor);
+        }
+
+        render() {
+          return (
+            <div className="content-container">
+              <h4>Child</h4>
+
+              <div className="lower-container">
+                <select onChange={this.handleChange} name="colors" id="color">
+                  <option value="red">Red</option>
+                  <option value="green">Green</option>
+                  <option value="blue">Blue</option>
+                  <option value="purple">Purple</option>
+                </select>
+              </div>
+            </div>
+          );
+        }
+      }
+
+      class Parent extends React.Component {
+        constructor(props) {
+          super(props);
+          this.state = {color: 'red'};
+
+          this.changeColor = this.changeColor.bind(this);
+        }
+
+        changeColor(col) {
+          this.setState({color: col});
+        }
+
+        render() {
+          return (
+            <div>
+              <Title text="Child/Parent Communication"
+                     subtext="Child chooses colour for parent" />
+
+              <div className="content-container">
+                <h4>Parent</h4>
+
+                <div className="lower-container">
+                  <h2>Child chooses colour <span style={{ color: this.state.color }}>
+                            { this.state.color }</span></h2>
+                </div>
+              </div>
+
+              <Child onChange={this.changeColor} />
+
+            </div>
+          );
+        }
+      }
+
+      ReactDOM.render(
+        <Parent />,
+        document.getElementById('root')
+      );
+
+    </script>
+
+  </body>
+</html>
