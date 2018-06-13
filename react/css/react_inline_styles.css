@@ -1,0 +1,15 @@
+/*    This demo illustrates how inline styles can be used in react.
+
+      Author: Richard Myatt
+      Date: 13 June 2018
+*/
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: lightyellow;
+}

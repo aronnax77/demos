@@ -1,0 +1,108 @@
+<!--  This demo illustrates how inline styles can be used in react.
+
+      Author: Richard Myatt
+      Date: 13 June 2018
+-->
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="css/react_inline_styles.css">
+    <meta charset="UTF-8" />
+    <title>Inline styles</title>
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+  </head>
+  <body>
+
+    <div id="root"></div>
+
+
+    <script type="text/babel">
+
+      const title = {
+                      display: "flex",
+                      justifyContent: "center",
+                      color: "lightblue",
+                      backgroundColor: "#333",
+                      padding: "5px"
+                    };
+
+      const titleContainer = {
+                                width: "450px",
+                                textAlign: "center"
+                              };
+
+      const contentContainer = {
+        width: "450px",
+        border: "2px solid black",
+        borderRadius: "16px",
+        backgroundColor: "lightblue",
+        margin: "50px auto"
+      };
+
+      const lowerContainer = {
+        width: "450px",
+        textAlign: "center",
+        padding: "30px 20px",
+        textAlign: "justify"
+      };
+
+      const note = "The accompanying code uses inline styling for the greater part of the styling which can be seen in this demo including the title bar and this block of notes.";
+
+      class Title extends React.Component {
+          render() {
+            return (
+              <div style={title}>
+                <div style={titleContainer}>
+                  <h1>{this.props.text}</h1>
+                  <h5>{this.props.subtext}</h5>
+                </div>
+              </div>
+            );
+          }
+        }
+
+        class Notes extends React.Component {
+          render() {
+            return (
+              <div style={contentContainer}>
+                <h4 style={{color: "blue", padding: "16px"}}>{this.props.heading}</h4>
+
+                <div style={lowerContainer}>
+                  {this.props.notes}
+                </div>
+              </div>
+            );
+          }
+        }
+
+        Notes.defaultProps = {heading: "Notes:",
+                              notes: "Notes go here"
+                              }
+
+        class Demo extends React.Component {
+          render() {
+            return (
+              <div>
+                <Title text="Inline styles"
+                       subtext="Using inline styles in react components" />
+
+              <Notes notes={note}/>
+
+              </div>
+            );
+          }
+        }
+
+        ReactDOM.render(
+          <Demo />,
+          document.getElementById('root')
+        );
+
+    </script>
+
+  </body>
+</html>
