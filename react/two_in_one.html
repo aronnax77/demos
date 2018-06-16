@@ -1,0 +1,159 @@
+<!--  Using stateless functional components and controlled forms in React.
+
+      Author: Richard Myatt
+      Date: 16 June 2018
+-->
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="css/two_in_one.css">
+    <meta charset="UTF-8" />
+    <title>Functional components and forms</title>
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+  </head>
+  <body>
+
+    <div id="root"></div>
+
+
+    <script type="text/babel">
+
+    const title = {
+                    display: "flex",
+                    justifyContent: "center",
+                    color: "lightblue",
+                    backgroundColor: "#333",
+                    padding: "5px"
+                  };
+
+    const titleContainer = {
+                              width: "450px",
+                              textAlign: "center"
+                            };
+
+    const contentContainer = {
+      width: "450px",
+      border: "2px solid black",
+      borderRadius: "16px",
+      backgroundColor: "lightblue",
+      margin: "50px auto"
+    };
+
+    const lowerContainer = {
+      width: "450px",
+      textAlign: "center",
+      padding: "30px 20px",
+      textAlign: "justify"
+    };
+
+    const display = {
+      width: "450px",
+      padding: "8px",
+      minHeight: "40px",
+      border: "2px solid black",
+      borderRadius: "16px",
+      backgroundColor: "lightgreen",
+      margin: "50px auto",
+      overflow: "auto"
+    };
+
+    const entry = {
+      width: "450px",
+      marginLeft: "50%",
+      transform: "translate(-50%, 0)"
+    };
+
+    var note = "The accompanying code for this demo provides an illustration of the use of 'stateless functional components' and 'controlled form elements' used in a React environement.  Try typing text into the input box below.";
+
+    const Title = (props) => {
+        return (
+          <div style={title}>
+            <div style={titleContainer}>
+              <h1>{props.text}</h1>
+              <h5>{props.subtext}</h5>
+            </div>
+          </div>
+        );
+      }
+
+      const Notes = (props) => {
+        return (
+          <div style={contentContainer}>
+            <h4 style={{color: "blue", padding: "16px"}}>{props.heading}</h4>
+
+            <div style={lowerContainer}>
+              {props.notes}
+            </div>
+          </div>
+        );
+      }
+
+      class FormEntry extends React.Component {
+
+        handleChange(e) {
+          var txt = e.target.value;
+          this.props.onChange(txt);
+        }
+
+        render() {
+          return (
+            <div>
+            <input id="entry" placeholder="Please enter text"
+                              type="text" value={this.props.value}
+                              style={entry}
+                              onChange={this.handleChange}/>
+            </div>
+          );
+        }
+      }
+
+      class Main extends React.Component {
+
+        constructor(props) {
+          super(props);
+
+          this.state = {value: ""};
+          this.handleChange = this.handleChange.bind(this);
+        }
+
+        handleChange(e) {
+          var txt = e.target.value;
+          this.setState({value: txt});
+        }
+
+        render() {
+          return (
+            <div>
+              <Title text="React Controlled Form" subtext=""
+                     subtext="Stateless Functional Components and Forms"/>
+
+              <Notes notes={note} />
+
+              <div style={display}>
+                  <h4>{this.state.value}</h4>
+              </div>
+
+              <input id="entry" placeholder="Please enter text"
+                                type="text" value={this.state.value}
+                                style={entry}
+                                onChange={this.handleChange}/>
+
+            </div>
+
+          );
+        }
+      }
+
+      ReactDOM.render(
+        <Main />,
+        document.getElementById('root')
+      );
+
+    </script>
+
+  </body>
+</html>

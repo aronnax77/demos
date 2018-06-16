@@ -1,0 +1,15 @@
+/*    Using stateless functional components and controlled forms in React.
+
+      Author: Richard Myatt
+      Date: 16 June 2018
+*/
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: lightyellow;
+}
