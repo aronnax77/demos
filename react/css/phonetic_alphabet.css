@@ -1,0 +1,66 @@
+/*    An exercise using react to build a phonetic alphabet converter
+
+      Author: Richard Myatt
+      Date: 28 June 2018
+*/
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #eee;
+}
+
+.title {
+  display: flex;
+  justify-content: center;
+  color: lightblue;
+  background-color: #333;
+  padding: 5px;
+}
+
+.titleContainer {
+  width: 450px;
+  text-align: center;
+}
+
+.display-container {
+  width: 40%;
+  background-color: lightblue;
+  padding: 20px 20px 40px 20px;
+  border-radius: 5px;
+  margin: 50px auto;
+  box-shadow: 3px 3px 2px #bbb;
+}
+
+.top-container {
+  padding: 20px 0;
+}
+
+.top-container input {
+  font-size: 2em;
+  width: 100%;
+}
+
+.btm-container {
+  font-size: 1.4em;
+  padding: 20px 10px;
+  min-height: 100px;
+  background-color: lightyellow;
+  box-shadow: 3px 3px 2px #bbb inset;
+}
+
+@media only screen and (max-width: 1400px) {
+  .display-container {
+    width: 60%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .display-container {
+    width: 100%;
+  }
+}

@@ -1,0 +1,110 @@
+<!--  An exercise using react to build a phonetic alphabet converter
+
+      Author: Richard Myatt
+      Date: 28 June 2018
+-->
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="css/phonetic_alphabet.css">
+    <title>Phonetic Alphabet</title>
+    <script src="js/convert.js"></script>
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+  </head>
+  <body>
+
+    <div id="root"></div>
+
+
+    <script type="text/babel">
+
+      const Title = (props) => {
+        return (
+          <div className="title">
+            <div className="titleContainer">
+              <h1>{props.text}</h1>
+              <h5>{props.subtext}</h5>
+            </div>
+          </div>
+        );
+      };
+
+      class Container extends React.Component {
+        constructor(props) {
+          super(props);
+
+          this.processChange = this.processChange.bind(this);
+        }
+
+        processChange(e) {
+          const val = e.target.value;
+          this.props.convert(val);
+        }
+
+        render() {
+          return (
+            <div className="display-container">
+              <div className="top-container">
+                <input type="text" placeholder="Enter text here"
+                                   onChange={this.processChange}
+                                   value={this.props.value} />
+              </div>
+              <div className="btm-container">
+                <div className="panel">{this.props.output}</div>
+              </div>
+            </div>
+          );
+        }
+      }
+
+
+      class MainApp extends React.Component {
+        constructor(props) {
+          super(props);
+
+          this.state = {
+            input: "",
+            output: ""
+          }
+
+          this.convert = this.convert.bind(this);
+        }
+
+        convert(arg) {
+          var out = convertText(arg);
+          this.setState({
+            input: arg,
+            output: out
+          });
+        }
+
+        render() {
+          return (
+            <div>
+              <Title text="Phonetic Alphabet Converter"
+                     subtext="Using React to convert text" />
+              <Container convert={this.convert}
+                         output={this.state.output}
+                         value={this.state.input} />
+            </div>
+
+          );
+        }
+      }
+
+      ReactDOM.render(
+        <MainApp />,
+        document.getElementById('root')
+      );
+
+
+
+    </script>
+
+  </body>
+</html>
