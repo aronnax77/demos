@@ -1,0 +1,10 @@
+/*       Author: Richard Myatt
+         Date: 26 July 2018
+*/
+
+body h3, body span {
+  display: inline-block;
+  font-weight: bold;
+  color: darkblue;
+  margin-left: 10px;
+}
