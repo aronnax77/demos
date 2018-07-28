@@ -1,0 +1,42 @@
+/*       Author: Richard Myatt
+         Date: 28 July 2018
+*/
+
+body {
+  background-color: lightgrey;
+}
+
+.outer-container {
+  width: 200px;
+  height: 200px;
+  margin-left: 20px;
+}
+
+.top-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  height: 110px;
+}
+
+.bottom-container {
+  display: flex;
+  width: 200px;
+  height: 100px;
+}
+
+.w-key, .a-key, .s-key {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2em;
+  font-weight: bold;
+  width: 100px;
+  height: 100px;
+  border: 3px solid #000;
+}
+
+.s-key {
+  margin-left: 5px;
+}
