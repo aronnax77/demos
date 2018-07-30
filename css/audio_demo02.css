@@ -1,0 +1,11 @@
+/*       Author: Richard Myatt
+         Date: 30 July 2018
+*/
+
+#snd {
+  width: 100px;
+  height: 100px;
+  margin-left: 20px;
+  border: 2px solid #000;
+  background-color: lightyellow;
+}
