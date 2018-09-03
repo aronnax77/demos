@@ -1,0 +1,36 @@
+<!--        Author: Richard Myatt
+            Date: 3 September 2018
+
+            A card flip demo based on a tutorial at
+            https://3dtransforms.desandro.com/card-flip
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="css/card_flip.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Card Flip demo</title>
+</head>
+<body>
+
+  <h1>Card Flip demo</h1>
+
+  <!-- outer div contains the 3D space -->
+  <div class="scene">
+    <!-- object within 3D space -->
+    <div class="card">
+      <!-- object has two faces -->
+      <div class="card_face card_face--front">front</div>
+      <div class="card_face card_face--back">back</div>
+    </div>
+  </div>
+
+  <p>Click card to flip</p>
+
+  <script src="js/card_flip.js"></script>
+
+</body>
+</html>
