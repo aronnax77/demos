@@ -1,0 +1,78 @@
+<!--        Author: Richard Myatt
+            Date: 19 September 2018
+
+            Linear progress bar written using Vue.js and an svg.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="css/linear_bar.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Linear Progress Bar</title>
+</head>
+<body>
+
+  <!-- provide a header for our demo -->
+  <header>
+    <h1>Linear Progress Bar</h1>
+  </header>
+
+  <!-- Vue.js application block -->
+  <div id="app">
+    <div class="container1">
+      <linear-progress-bar :offset="offset" :percent="percent"></linear-progress-bar>
+    </div>
+
+    <div class="container2">
+      <input type="range" min="0" max="100" v-model="percent" @input="calcOffset">
+    </div>
+
+  </div>  <!-- Vue.js application block ends -->
+
+  <!-- template for radial progress bar component -->
+  <template id="linear-progress-bar">
+    <div id="display">
+
+      <svg width="420" height="70" viewBox="0 0 420 70"
+        xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <title>Radial Progress Bar</title>
+
+        <!-- establish a clipping path -->
+        <defs>
+          <clipPath id="bar">
+            <rect id="rect" x="10" y="39" width="400" height="12" rx="6" ry="6"
+              style="fill: none; stroke: #000;"  />
+          </clipPath>
+        </defs>
+
+        <!-- paint progress bar and apply clipping path -->
+        <g id="pb" style="clip-path: url(#bar);">
+          <!-- background colour for progress bar -->
+          <line x1="10" y1="45" x2="410" y2="45"
+            style="stroke: #e6e6e6; stroke-width: 12;" />
+          <!-- animated green bar -->
+          <line x1="10" y1="45" x2="410" y2="45"
+            style="stroke: #008000; stroke-width: 12; stroke-dasharray: 400;" :stroke-dashoffset="offset" />
+        </g>
+
+        <!-- provide border above progress bar -->
+        <use xlink:href="#rect" />
+
+        <!-- percentage readout text -->
+        <text x="16" y="30"
+          style="font-size: 20px; font-weight: bold;">{{ percent }}%</text>
+
+      </svg>
+
+    </div>
+  </template>
+
+
+   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>
+   <script src="js/linear_bar.js"></script>
+
+</body>
+</html>

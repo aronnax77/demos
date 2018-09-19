@@ -1,7 +1,8 @@
 <!-- Author: Richard Myatt
-     4 March 2018
+     Date: 4 March 2018
+     Revised: 19 September 2018
 
-     Radial progress bar
+     Radial progress bar revised.
 -->
 
 
@@ -16,24 +17,50 @@
 </head>
 <body>
 
-  <div id="progress">
-  <div id="display">
-    <svg width="120" height="120" viewBox="0 0 120 120">
-      <circle cx= "60" cy="60" r="54" fill="none" stroke="#e6e6e6" stroke-width="12"/>
-      <circle cx= "60" cy="60" r="54" fill="none" stroke="green" stroke-width="12"
-        stroke-dasharray="339.292" :stroke-dashoffset="offset"/>
-    </svg>
-    <div class="number">
-      <span>{{ slide }}%</span>
+  <!-- provide a header for our demo -->
+  <header>
+    <h1>Radial Progress Bar</h1>
+  </header>
+
+  <!-- Vue.js application block -->
+  <div id="app">
+    <div class="container1">
+      <radial-progress-bar :offset="offset" :percent="percent"></radial-progress-bar>
     </div>
-  </div>
 
-  <!--<input type="text" v-model="offset">-->
-  <input type="range" min="0" max="100" v-model="slide" @input="calcOffset" class="slider" id="myRange">
-  </div>
+    <div class="container2">
+      <input type="range" min="0" max="100" v-model="percent" @input="calcOffset">
+    </div>
+
+  </div>  <!-- Vue.js application block ends -->
+
+  <!-- template for radial progress bar component -->
+  <template id="radial-progress-bar">
+    <div id="display">
+
+      <svg width="120" height="120" viewBox="0 0 120 120"
+        xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <title>Radial Progress Bar</title>
+
+        <!-- paint bar in grey -->
+        <circle cx= "60" cy="60" r="54"
+          style="fill: none; stroke: #e6e6e6; stroke-width: 12" />
+        <!-- animate green bar over the grey bar -->
+        <circle cx= "60" cy="60" r="54" fill="none" stroke="green" stroke-width="12" stroke-dasharray="339.292" :stroke-dashoffset="offset"/>
+          style="fill: none; stroke: green; stroke-width: 12; stroke-dasharray: 339.292;" :stroke-dashoffset="offset" />
+
+        <!-- percentage readout text -->
+        <text x="60" y="60" text-anchor="middle"
+          transform="rotate(90, 60, 60)"
+          style="font-size: 20px; font-weight: bold;">{{ percent }}%</text>
+
+      </svg>
+
+    </div>
+  </template>
 
 
-   <script src="https://unpkg.com/vue@2.0.3/dist/vue.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>
    <script src="js/radial_bar.js"></script>
 
 </body>
