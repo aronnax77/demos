@@ -1,0 +1,53 @@
+/*          Author: Richard Myatt
+            Date: 20 September 2018
+
+            An svg counter similar to that used by SL.  Because
+            this is written as an svg it can easily be resized.
+
+            Please contrast this counter with those previously
+            posted here at:
+            https://code.sololearn.com/Wn6r7eQ3kwli/#html and
+            https://code.sololearn.com/WsX7DwcDjvdt/#html
+*/
+
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono');
+
+h1 {
+  font-size: 25px;
+}
+
+h1, svg {
+  margin-left: 20px;
+}
+
+path {
+  fill: none;
+  stroke: #000;
+  stroke-width: 6px;
+  pointer-events: visibleFill;
+}
+
+.bg {
+  fill: #fff;
+  stroke: none;
+}
+
+.mask {
+  visibility: visible;
+  fill: none;
+  stroke: none;
+}
+
+.txt {
+  font-family: 'Roboto Mono', monospace;
+  text-anchor: middle;
+  font-size: 25px;
+}
+
+rect:hover {
+  cursor: pointer;
+}
+
+path:hover {
+  stroke: blue;
+}

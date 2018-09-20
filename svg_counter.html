@@ -1,0 +1,136 @@
+<!--        Author: Richard Myatt
+            Date: 20 September 2018
+
+            An svg counter similar to that used by SL.  Because
+            this is written as an svg it can easily be resized.
+
+            Please contrast this counter with those previously
+            posted here at:
+            https://code.sololearn.com/Wn6r7eQ3kwli/#html and
+            https://code.sololearn.com/WsX7DwcDjvdt/#html
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="css/counter.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>SVG counter</title>
+</head>
+<body>
+
+  <h1>SVG counter</h1>
+
+  <br>
+
+  <!-- Vue.js application block -->
+  <div id="counter-app">
+
+    <!-- show horizontal counter -->
+    <horizontal-counter></horizontal-counter>
+
+    <br>
+    <br>
+    <br>
+
+    <vertical-counter></vertical-counter>
+
+  </div><!-- end of Vue.js application block -->
+
+  <template id="horizontal-counter">
+    <div>
+
+      <svg width="180" height="50" viewBox="0 0 180 50"
+        xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <title>SVG counter demo</title>
+
+        <!-- provide a white background -->
+        <rect class="bg" x="0" y="0" width="100%" height="100%" />
+
+        <!-- up arrow -->
+        <a href="#" class="up" @click="inc">
+          <svg x="5" y="15" width="40" height="20" viewBox="0 0 100 50">
+          <title>Up arrow</title>
+
+            <!-- add bounding box to make pointer work -->
+            <rect class="mask" x="0" y="0" width="40" height="20" />
+
+            <!-- path defining the arrow -->
+            <path d="M 0 50 L 50 0 L 100 50" />
+
+          </svg>
+        </a>
+
+        <!-- down arrow -->
+        <a href="#" class="down" @click="dec">
+          <svg x="135" y="15" width="40" height="20" viewBox="0 0 100 50">
+          <title>Down arrow</title>
+
+              <!-- add bounding box to make pointer work -->
+              <rect class="mask" x="0" y="0" width="40" height="20" />
+
+              <!-- path defining the arrow -->
+              <path d="M 0 0 L 50 50 L 100 0" />
+
+          </svg>
+        </a>
+
+        <text class="txt" x="90" y="35"
+          >{{ output }}</text>
+
+      </svg>
+    </div>
+  </template>
+
+  <template id="vertical-counter">
+    <div>
+
+      <svg width="70" height="160" viewBox="0 0 70 160"
+        xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <title>SVG counter demo</title>
+
+        <!-- provide a white background -->
+        <rect class="bg" x="0" y="0" width="100%" height="100%" />
+
+        <!-- up arrow -->
+        <a href="#" class="up" @click="inc">
+          <svg x="15" y="5" width="40" height="20" viewBox="0 0 100 50">
+          <title>Up arrow</title>
+
+            <!-- add bounding box to make pointer work -->
+            <rect class="mask" x="0" y="0" width="40" height="20" />
+
+            <!-- path defining the arrow -->
+            <path d="M 0 50 L 50 0 L 100 50" />
+
+          </svg>
+        </a>
+
+        <!-- down arrow -->
+        <a href="#" class="down" @click="dec">
+          <svg x="15" y="135" width="40" height="20" viewBox="0 0 100 50">
+          <title>Down arrow</title>
+
+              <!-- add bounding box to make pointer work -->
+              <rect class="mask" x="0" y="0" width="40" height="20" />
+
+              <!-- path defining the arrow -->
+              <path d="M 0 0 L 50 50 L 100 0" />
+
+          </svg>
+        </a>
+
+        <text class="txt" x="35" y="90"
+          >{{ output }}</text>
+
+      </svg>
+    </div>
+  </template>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>
+  <script src="js/svg_counter.js"></script>
+
+</body>
+</html>
