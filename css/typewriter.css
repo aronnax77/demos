@@ -1,0 +1,43 @@
+/*              Author: Richard Myatt
+                Date: 20 October 2018
+
+                A typewriter demo using a function designed to allow typing into
+                multiple paragraphs.
+*/
+
+@import url('https://fonts.googleapis.com/css?family=Oswald');
+
+body {
+  background-color: #eee;
+}
+
+.container {
+  background-color: #fff;
+  width: 500px;
+  height: 310px;
+  border-radius: 10px;
+  padding: 20px 0;
+  margin: 80px auto;
+  -webkit-box-shadow: 5px 8px 3px #888;
+          box-shadow: 5px 8px 3px #888;
+}
+
+h1 {
+  font-family: 'Oswald', sans-serif;
+  font-size: 25px;
+  text-align: center;
+}
+
+blockquote {
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.2em;
+  text-align: center;
+}
+
+.attribution {
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.8em;
+  font-style: italic;
+  text-align: right;
+  margin-right: 50px;
+}
