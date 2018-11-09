@@ -1,0 +1,31 @@
+Begin with Building Multi-Touch Web Applications - https://blog.teamtreehouse.com/building-multi-touch-web-applications
+
+
+Touch events
+
+touchstart
+touchmove
+touchend
+touchcancel
+touchenter
+touchleave
+
+If you do not want mouse events to be triggered use event.preventDefault().
+
+The touch event has a number of properties.  The tutorial above is only interested in changedTouches.  This property contains a list of all the Touch objects that changed with the event.  There is also a property called touches which contains a full list of all the active touch points.
+
+Each Touch object includes a number of properties that provide information about the position of the pointer on the screen.  For this tutorial we are only interested in identifier, pageX, and pageY.
+
+identifier - A unique ID for the touch object.
+pageX      - The position of the touch point which includes any scroll offset.
+pageY      - The position of the touch point which includes any scroll offset.
+
+See https://developer.mozilla.org/en-US/docs/Web/API/Touch for more information on touch object properties.
+
+
+A useful general article - https://www.html5rocks.com/en/mobile/touch/
+
+A simple approach - https://www.codicode.com/art/easy_way_to_add_touch_support_to_your_website.aspx
+
+
+

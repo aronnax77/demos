@@ -1,0 +1,32 @@
+/*                Author: Richard Myatt
+                  Date: 6 November 2018
+
+                  An example of how an svg rectangle can be dragged using the
+                  mouse and touch events.
+*/
+
+body {
+  background-color: #efefef;
+}
+
+h1 {
+  text-align: center;
+  font-size: 25px;
+}
+
+h5 {
+  text-align: center;
+}
+
+.container {
+  width: 400px;
+  margin: 0 auto;
+}
+
+.draggable {
+  cursor: move;
+}
+
+.static {
+  cursor: not-allowed;
+}
