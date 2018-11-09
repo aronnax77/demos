@@ -1,13 +1,15 @@
 /*            Author: Richard Myatt
               Date: 26 October 2018
+              Revised: 9 November 2018 - touch tracking added for mobile and
+              title changed
 
-              Tracking mouse movements within an svg.
+              Tracking mouse and touch movements within an svg.
               See Mouse tracking within an svg at
               https://code.sololearn.com/WnDoJTIPJj2n/#html
               for a demo.
 */
 
-alert("Mouse over to see him watching!");
+//alert("Mouse over to see him watching!");
 
 document.addEventListener('DOMContentLoaded', function() {
 

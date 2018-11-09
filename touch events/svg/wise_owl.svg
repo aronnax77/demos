@@ -75,18 +75,46 @@
               var maxTravel = 35;   // maximum travel for pupil
 
 
-              function movePupils(evt) {
+              function movePupilsWithMouse(evt) {
 
                 // set point to position clicked
                 pt.x = evt.clientX;
                 pt.y = evt.clientY;
 
                 // obtain local coordinates within the svg
-                var svgP = pt.matrixTransform(svgEl.getScreenCTM().inverse());
+                var localCoords = getLocalCoordinates(pt);
+                
+                // move the eye - dot
+                moveDot(localCoords);
+              }
+              
+			  function movePupilsWithTouch(evt) {
+				//evt.preventDefault();    // prevent mouse interaction
+				if(evt.changedTouches.length === 1) {
 
+				  // set point to position touched
+				  pt.x = evt.changedTouches[0].clientX;
+				  pt.y = evt.changedTouches[0].clientY;
+
+				  //obtain local coordinates
+				  var localCoords = getLocalCoordinates(pt);
+
+				  // move the eye - dot
+				  moveDot(localCoords);
+				}
+              }
+              
+              function getLocalCoordinates(point) {
+                // obtain local coordinates within the svg
+                var svgP = point.matrixTransform(svgEl.getScreenCTM().inverse());
+
+                return svgP;
+              }
+              
+              function moveDot(lc) {
                 // local mouse position
-                var localX = svgP.x - 74.71;
-                var localY = svgP.y - 78.32;
+                var localX = lc.x - 74.71;
+                var localY = lc.y - 78.32;
 
                 //LEFT EYE
                 // position reletive to dot
@@ -123,7 +151,9 @@
                 }
               }
 
-              svgEl.addEventListener("mousemove", movePupils);
+			  // add event listeners
+              svgEl.addEventListener("mousemove", movePupilsWithMouse);
+              svgEl.addEventListener("touchmove", movePupilsWithTouch);
             }
           ]]>
         </script>
